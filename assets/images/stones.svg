@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f8f7f4"/><stop offset="1" stop-color="#e8e6e2"/></linearGradient>
+    <radialGradient id="gem" cx="35%" cy="25%"><stop stop-color="#fff"/><stop offset=".42" stop-color="#b9d8e8"/><stop offset="1" stop-color="#476c91"/></radialGradient>
+    <radialGradient id="gold" cx="35%" cy="25%"><stop stop-color="#fff2b7"/><stop offset=".45" stop-color="#e3b952"/><stop offset="1" stop-color="#9c6720"/></radialGradient>
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="2" dy="7" stdDeviation="7" flood-color="#38322a" flood-opacity=".2"/></filter>
+  </defs>
+  <rect width="720" height="540" fill="url(#bg)"/>
+  <g filter="url(#shadow)" stroke="#fff" stroke-opacity=".82" stroke-width="3">
+    <path d="M158 115 225 86 286 119 278 193 214 222 154 184Z" fill="url(#gem)"/>
+    <path d="m332 100 57-32 66 27 13 68-53 51-70-24-28-49Z" fill="url(#gold)"/>
+    <path d="m496 142 61-31 62 35-4 69-61 35-61-38Z" fill="#ad6b86"/>
+    <path d="m103 294 62-36 70 31 4 73-62 38-71-32Z" fill="#579a78"/>
+    <path d="m285 292 67-34 62 34-4 76-62 31-63-33Z" fill="url(#gold)"/>
+    <path d="m474 310 58-36 70 30 7 75-66 37-65-35Z" fill="#527aaa"/>
+    <circle cx="213" cy="423" r="36" fill="#bb6874"/><circle cx="367" cy="432" r="40" fill="url(#gem)"/><circle cx="533" cy="439" r="34" fill="url(#gold)"/>
+  </g>
+  <g fill="#fff" opacity=".55"><circle cx="193" cy="131" r="10"/><circle cx="361" cy="109" r="8"/><circle cx="526" cy="159" r="9"/><circle cx="143" cy="308" r="8"/><circle cx="324" cy="307" r="9"/><circle cx="510" cy="326" r="8"/></g>
+</svg>
