@@ -46,6 +46,11 @@ jobs:
             test -s "dist/cashfree-payment-app/browser/assets/dashboard/$banner"
           done
 
+      - name: Verify Combo Pack assets
+        run: |
+          test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Beginner-Combos.png"
+          test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Professional-Combo.png"
+
       - name: Support direct route navigation
         run: cp dist/cashfree-payment-app/browser/index.html dist/cashfree-payment-app/browser/404.html
 
@@ -66,5 +71,11 @@ jobs:
             curl --fail --silent --show-error --location \
               --retry 8 --retry-all-errors --retry-delay 10 \
               "${PAGE_URL%/}/assets/dashboard/$banner" \
+              --output /dev/null
+          done
+          for combo in Beginner-Combos.png Professional-Combo.png; do
+            curl --fail --silent --show-error --location \
+              --retry 8 --retry-all-errors --retry-delay 10 \
+              "${PAGE_URL%/}/assets/combo-pack/$combo" \
               --output /dev/null
           done

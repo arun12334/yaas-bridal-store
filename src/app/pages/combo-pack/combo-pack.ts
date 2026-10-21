@@ -22,14 +22,14 @@ export class ComboPack {
     {
       id: 'beginner-combos',
       title: 'Beginner Combos',
-      image: '/assets/combo-pack/Beginner-Combos.png',
+      image: 'assets/combo-pack/Beginner-Combos.png',
       width: 1536,
       height: 1024,
     },
     {
       id: 'professional-combo',
       title: 'Professional Combo',
-      image: '/assets/combo-pack/Professional-Combo.png',
+      image: 'assets/combo-pack/Professional-Combo.png',
       width: 1254,
       height: 1254,
     },

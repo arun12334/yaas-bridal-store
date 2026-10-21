@@ -63,8 +63,8 @@ export class Dashboard implements OnInit {
       description: 'Curated material combinations for every skill level.',
       route: '/combo-pack',
       cards: [
-        { name: 'Beginner Combos', image: '/assets/combo-pack/Beginner-Combos.png' },
-        { name: 'Professional Combo', image: '/assets/combo-pack/Professional-Combo.png' },
+        { name: 'Beginner Combos', image: 'assets/combo-pack/Beginner-Combos.png' },
+        { name: 'Professional Combo', image: 'assets/combo-pack/Professional-Combo.png' },
       ],
     },
     {
