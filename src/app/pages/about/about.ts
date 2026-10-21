@@ -63,7 +63,7 @@ export class About {
     },
     {
       title: 'Real customer support',
-      description: 'Reach the Tamilan Products team by phone or email when you need assistance.',
+      description: 'Reach the Yaas Bridal Store team by phone or email when you need assistance.',
       icon: 'bi bi-chat-heart',
     },
     {
