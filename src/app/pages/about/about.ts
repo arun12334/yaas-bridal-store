@@ -26,25 +26,25 @@ export class About {
   readonly banners: AboutBanner[] = [
     {
       alt: 'Aari embroidery kit with threads, needles, beads and fabric',
-      image: '/assets/about/banner-3.png',
+      image: 'assets/about/banner-3.png',
       title: 'Aari embroidery kits',
       description: 'Find threads, Aari needles, beads and accessories to help bring embroidery ideas to life.',
     },
     {
       alt: 'Aari embroidery materials including threads, needles, stones and beads',
-      image: '/assets/about/banner-1.png',
+      image: 'assets/about/banner-1.png',
       title: 'Aari embroidery materials',
       description: 'Explore essential materials for detailed Aari work, from colourful threads to decorative accents.',
     },
     {
       alt: 'Colourful beads, pearls and stones for Aari work',
-      image: '/assets/about/banner-2.png',
+      image: 'assets/about/banner-2.png',
       title: 'Beads, pearls and stones',
       description: 'Add colour, texture and a decorative finish to embroidery with beads, pearls and stones.',
     },
     {
       alt: 'Aari embroidery materials and tailoring supplies banner',
-      image: '/assets/about/banner-4.png',
+      image: 'assets/about/banner-4.png',
       title: 'Creative textile supplies',
       description: 'Browse embroidery and tailoring supplies for a variety of creative projects.',
     },

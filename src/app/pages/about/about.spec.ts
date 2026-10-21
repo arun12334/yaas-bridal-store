@@ -20,6 +20,15 @@ describe('About', () => {
     expect(component).toBeTruthy();
   });
 
+  it('uses base-href-relative paths for all About page banners', () => {
+    expect(component.banners.map(banner => banner.image)).toEqual([
+      'assets/about/banner-3.png',
+      'assets/about/banner-1.png',
+      'assets/about/banner-2.png',
+      'assets/about/banner-4.png',
+    ]);
+  });
+
   it('shows the requested About page content and verified contact details', () => {
     const pageText = fixture.nativeElement.textContent as string;
 

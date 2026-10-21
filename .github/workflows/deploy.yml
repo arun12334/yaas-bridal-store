@@ -51,6 +51,12 @@ jobs:
           test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Beginner-Combos.png"
           test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Professional-Combo.png"
 
+      - name: Verify About page assets
+        run: |
+          for image in banner-1.png banner-2.png banner-3.png banner-4.png; do
+            test -s "dist/cashfree-payment-app/browser/assets/about/$image"
+          done
+
       - name: Support direct route navigation
         run: cp dist/cashfree-payment-app/browser/index.html dist/cashfree-payment-app/browser/404.html
 
@@ -77,5 +83,11 @@ jobs:
             curl --fail --silent --show-error --location \
               --retry 8 --retry-all-errors --retry-delay 10 \
               "${PAGE_URL%/}/assets/combo-pack/$combo" \
+              --output /dev/null
+          done
+          for image in banner-1.png banner-2.png banner-3.png banner-4.png; do
+            curl --fail --silent --show-error --location \
+              --retry 8 --retry-all-errors --retry-delay 10 \
+              "${PAGE_URL%/}/assets/about/$image" \
               --output /dev/null
           done
