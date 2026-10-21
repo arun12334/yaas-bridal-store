@@ -1,0 +1,212 @@
+.brooch-materials-view-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.brooch-materials-view-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brooch-materials-view-back:hover {
+  color: var(--accent);
+}
+
+.brooch-materials-view-eyebrow {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brooch-materials-view-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+}
+
+.brooch-materials-view-count {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.brooch-flower-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.brooch-flower-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.brooch-flower-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px #14152a12;
+}
+
+.brooch-flower-image {
+  height: 220px;
+  overflow: hidden;
+  background: #f5f4f1;
+}
+
+.brooch-flower-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.brooch-flower-card:hover .brooch-flower-image img {
+  transform: scale(1.04);
+}
+
+.brooch-flower-info {
+  padding: 15px 14px 16px;
+  text-align: center;
+}
+
+.brooch-flower-info h2 {
+  min-height: 42px;
+  margin: 0 0 12px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.brooch-flower-pack {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: left;
+}
+
+.brooch-flower-pack select {
+  min-width: 92px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.brooch-flower-price {
+  margin: 8px 0 3px;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.brooch-flower-stock {
+  margin: 0 0 13px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.brooch-flower-add {
+  display: inline-flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  border-radius: 24px;
+  background: var(--brand);
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.brooch-flower-add:hover {
+  transform: translateY(-1px);
+  background: var(--brand-dark);
+}
+
+.brooch-flower-add:focus-visible,
+.brooch-flower-pack select:focus-visible,
+.brooch-materials-view-back:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.brooch-materials-view-empty {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--muted);
+}
+
+@media (max-width: 991px) {
+  .brooch-flower-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .brooch-flower-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .brooch-flower-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .brooch-flower-image {
+    height: 175px;
+  }
+
+  .brooch-flower-info {
+    padding: 12px 10px;
+  }
+
+  .brooch-flower-info h2 {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  .brooch-flower-grid {
+    gap: 9px;
+  }
+
+  .brooch-flower-image {
+    height: 145px;
+  }
+
+  .brooch-materials-view-heading {
+    align-items: start;
+  }
+}

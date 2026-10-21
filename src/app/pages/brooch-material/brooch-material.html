@@ -12,7 +12,7 @@
 
     <div class="brooch-material-grid">
       @for (category of categories; track category.name) {
-        <a class="brooch-material-card" [routerLink]="['/collection']" [queryParams]="{ q: category.searchTerm }">
+        <a class="brooch-material-card" [routerLink]="['/brooch-materials-view']" [queryParams]="{ q: category.name }">
           <div class="brooch-material-card-image">
             <img [ngSrc]="category.image" [alt]="category.name" width="720" height="540" loading="lazy">
             <span class="brooch-material-card-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>

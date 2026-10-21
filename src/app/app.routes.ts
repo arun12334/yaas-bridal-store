@@ -23,6 +23,7 @@ import { Wishlist } from './pages/wishlist/wishlist';
 import { About } from './pages/about/about';
 import { Login } from './pages/login/login';
 import { Registration } from './pages/registration/registration';
+import { BroochMaterialsView } from './pages/brooch-material/brooch-materials-view/brooch-materials-view';
 
 export const routes: Routes = [
   {
@@ -125,6 +126,11 @@ export const routes: Routes = [
   {
     path: 'registration',
     component: Registration,
+  },
+
+  {
+    path: 'brooch-materials-view',
+    component: BroochMaterialsView,
   },
   {
     path: '**',
