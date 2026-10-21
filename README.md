@@ -1,0 +1,1 @@
+# yaas-bridal-store
