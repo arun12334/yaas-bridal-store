@@ -43,27 +43,27 @@ jobs:
       - name: Verify dashboard banner assets
         run: |
           for banner in banner-1.png banner-2.png banner-3.png banner-4.png; do
-            test -s "dist/cashfree-payment-app/browser/assets/dashboard/$banner"
+            test -s "dist/yaas-bridal-store/browser/assets/dashboard/$banner"
           done
 
       - name: Verify Combo Pack assets
         run: |
-          test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Beginner-Combos.png"
-          test -s "dist/cashfree-payment-app/browser/assets/combo-pack/Professional-Combo.png"
+          test -s "dist/yaas-bridal-store/browser/assets/combo-pack/Beginner-Combos.png"
+          test -s "dist/yaas-bridal-store/browser/assets/combo-pack/Professional-Combo.png"
 
       - name: Verify About page assets
         run: |
           for image in banner-1.png banner-2.png banner-3.png banner-4.png; do
-            test -s "dist/cashfree-payment-app/browser/assets/about/$image"
+            test -s "dist/yaas-bridal-store/browser/assets/about/$image"
           done
 
       - name: Support direct route navigation
-        run: cp dist/cashfree-payment-app/browser/index.html dist/cashfree-payment-app/browser/404.html
+        run: cp dist/yaas-bridal-store/browser/index.html dist/yaas-bridal-store/browser/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/cashfree-payment-app/browser
+          path: dist/yaas-bridal-store/browser
 
       - name: Deploy to GitHub Pages
         id: deployment
