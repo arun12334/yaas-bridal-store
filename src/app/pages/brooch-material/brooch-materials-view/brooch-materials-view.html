@@ -19,16 +19,42 @@
         @for (flower of flowers; track flower.id) {
           <article class="brooch-flower-card">
             <div class="brooch-flower-image">
-              <img
-                [ngSrc]="flowerImageBase + flower.image"
-                [alt]="flower.name"
-                width="620"
-                height="460"
-                loading="lazy"
+              <a
+                class="brooch-flower-detail-link"
+                [routerLink]="['/brooch-materials-full-view']"
+                [queryParams]="{ id: flower.id }"
+                [attr.aria-label]="'View ' + flower.name"
               >
+                <img
+                  [ngSrc]="flowerImageBase + flower.image"
+                  [alt]="flower.name"
+                  width="620"
+                  height="460"
+                  loading="lazy"
+                >
+              </a>
+              <button
+                class="brooch-flower-wish"
+                [class.brooch-flower-wish-saved]="store.isWishlisted(flowerProductId(flower))"
+                type="button"
+                (click)="toggleFlowerWishlist(flower)"
+                [attr.aria-label]="store.isWishlisted(flowerProductId(flower)) ? 'Remove from wishlist' : 'Add to wishlist'"
+              >
+                <i
+                  class="bi"
+                  [class.bi-heart-fill]="store.isWishlisted(flowerProductId(flower))"
+                  [class.bi-heart]="!store.isWishlisted(flowerProductId(flower))"
+                  aria-hidden="true"
+                ></i>
+              </button>
             </div>
             <div class="brooch-flower-info">
-              <h2>{{ flower.name }}</h2>
+              <h2>
+                <a
+                  [routerLink]="['/brooch-materials-full-view']"
+                  [queryParams]="{ id: flower.id }"
+                >{{ flower.name }}</a>
+              </h2>
               <label class="brooch-flower-pack">
                 <span>Pack size</span>
                 <select
@@ -44,7 +70,6 @@
               <p class="brooch-flower-price">
                 {{ selectedPackPrice(flower.id) | currency:'INR':'symbol':'1.2-2' }}
               </p>
-              <p class="brooch-flower-stock">{{ flower.stock }}g in stock</p>
               <button class="brooch-flower-add" type="button" (click)="addFlowerToCart(flower)">
                 <i class="bi bi-bag-plus" aria-hidden="true"></i>
                 Add to Cart

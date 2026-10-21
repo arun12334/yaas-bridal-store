@@ -6,11 +6,12 @@ import { filter } from 'rxjs';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { ChatWidget } from './components/chat-widget/chat-widget';
+import { Breadcrumb } from './components/breadcrumb/breadcrumb';
 import { StoreService } from './services/store.service';
 
 @Component({
   selector: 'app-root',
-  imports: [CurrencyPipe, Footer, Header, ChatWidget, RouterLink, RouterOutlet],
+  imports: [CurrencyPipe, Footer, Header, ChatWidget, Breadcrumb, RouterLink, RouterOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './app.html',
   styleUrl: './app.css',

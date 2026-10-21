@@ -20,4 +20,14 @@ describe('Dashboard', () => {
     expect(component).toBeTruthy();
   });
 
+  it('shows six trending Aari material cards and the supplied video', () => {
+    fixture.detectChanges();
+
+    expect(component.trendingMaterials).toHaveLength(6);
+    expect(component.trendingMaterials.every(material => material.route === '/aari-material')).toBe(true);
+    expect(component.trendingVideo).toBe('assets/videos/aari-video.mp4');
+    expect(fixture.nativeElement.querySelectorAll('.dashboard-trending-card')).toHaveLength(6);
+    expect(fixture.nativeElement.querySelector('.dashboard-trending-video video')).toBeTruthy();
+  });
+
 });

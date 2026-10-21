@@ -24,6 +24,9 @@ import { About } from './pages/about/about';
 import { Login } from './pages/login/login';
 import { Registration } from './pages/registration/registration';
 import { BroochMaterialsView } from './pages/brooch-material/brooch-materials-view/brooch-materials-view';
+import { BroochMaterialsFullView } from './pages/brooch-material/brooch-materials-full-view/brooch-materials-full-view';
+
+
 
 export const routes: Routes = [
   {
@@ -131,6 +134,10 @@ export const routes: Routes = [
   {
     path: 'brooch-materials-view',
     component: BroochMaterialsView,
+  },
+  {
+    path: 'brooch-materials-full-view',
+    component: BroochMaterialsFullView,
   },
   {
     path: '**',

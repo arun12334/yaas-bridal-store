@@ -51,6 +51,50 @@
       <div><span class="c565878-DASH-786986-BOARD-benefit-icon"><i class="bi bi-stars"></i></span><span><b>Made for makers</b><small>Explore craft essentials</small></span></div>
     </section>
 
+    <section class="dashboard-trending-section">
+      <div class="container-xl dashboard-trending-content">
+        <div class="c565878-DASH-786986-BOARD-section-heading dashboard-trending-heading">
+          <span class="c565878-DASH-786986-BOARD-eyebrow">TRENDING NOW</span>
+          <h2>Trending Now</h2>
+          <p>Life is one big celebration. Dance, dazzle and enjoy with the finest festive material designs.</p>
+        </div>
+
+        <div class="dashboard-trending-layout">
+          <div class="dashboard-trending-grid">
+            @for (material of trendingMaterials; track material.name) {
+              <a class="dashboard-trending-card" [routerLink]="material.route">
+                <div class="dashboard-trending-card-image">
+                  <img [ngSrc]="material.image" [alt]="material.name" width="720" height="540" loading="lazy">
+                  <span class="dashboard-trending-card-arrow" aria-hidden="true">
+                    <i class="bi bi-arrow-up-right"></i>
+                  </span>
+                </div>
+                <div class="dashboard-trending-card-copy">
+                  <h3>{{ material.name }}</h3>
+                  <p>{{ material.description }}</p>
+                </div>
+              </a>
+            }
+          </div>
+
+          <div class="dashboard-trending-video">
+            <video
+              controls
+              autoplay
+              [muted]="true"
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Aari material showcase video"
+            >
+              <source [src]="trendingVideo" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="c565878-DASH-786986-BOARD-section-space container-xl">
       <div class="c565878-DASH-786986-BOARD-section-heading c565878-DASH-786986-BOARD-reveal c565878-DASH-786986-BOARD-revealed"><span class="c565878-DASH-786986-BOARD-eyebrow">FIND YOUR MATERIALS</span><h2>Explore Categories</h2><p>Browse all our collections and discover the right materials for your next creative project.</p></div>
       @for (section of menuSections; track section.id) {

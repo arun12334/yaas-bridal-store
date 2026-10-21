@@ -1,0 +1,96 @@
+<main class="container-xl brooch-full-view">
+  @if (flower(); as item) {
+    <a class="brooch-full-view-back" [routerLink]="['/brooch-materials-view']" [queryParams]="{ q: 'Flowers' }">
+      <i class="bi bi-arrow-left" aria-hidden="true"></i>
+      Back to Flowers
+    </a>
+
+    <section class="brooch-full-view-layout" aria-labelledby="brooch-full-view-title">
+      <div class="brooch-full-view-image">
+        <img
+          [ngSrc]="flowerImageBase + item.image"
+          [alt]="item.name"
+          width="900"
+          height="700"
+          priority
+        >
+      </div>
+
+      <div class="brooch-full-view-details">
+        <p class="brooch-full-view-eyebrow">YAAS BRIDAL STORE · BROOCH MATERIALS</p>
+        <h1 id="brooch-full-view-title">{{ item.name }}</h1>
+        <p class="brooch-full-view-intro">
+          Add a delicate floral detail to your bridal, Aari work, and embroidery creations.
+        </p>
+
+        <p class="brooch-full-view-price">
+          {{ selectedPack().price | currency:'INR':'symbol':'1.2-2' }}
+        </p>
+
+        <div class="brooch-full-view-meta">
+          <div><span>Colour</span><strong>{{ item.color }}</strong></div>
+          <label for="brooch-full-view-pack">Pack size</label>
+          <select
+            id="brooch-full-view-pack"
+            [value]="selectedWeight()"
+            (change)="onPackWeightChange($event)"
+          >
+            @for (pack of packOptions; track pack.weight) {
+              <option [value]="pack.weight">{{ pack.weight }}g</option>
+            }
+          </select>
+        </div>
+
+        <div class="brooch-full-view-quantity">
+          <span>Quantity</span>
+          <div class="brooch-full-view-quantity-control" aria-label="Quantity">
+            <button type="button" (click)="decreaseQuantity()" aria-label="Decrease quantity">−</button>
+            <span aria-live="polite">{{ quantity() }}</span>
+            <button
+              type="button"
+              (click)="quantity.update(value => value + 1)"
+              aria-label="Increase quantity"
+            >+</button>
+          </div>
+        </div>
+
+        <div class="brooch-full-view-actions">
+          <button class="brooch-full-view-add" type="button" (click)="addToCart()">
+            <i class="bi bi-bag-plus" aria-hidden="true"></i>
+            Add to Cart
+          </button>
+          <button
+            class="brooch-full-view-wish"
+            type="button"
+            (click)="toggleWishlist()"
+            [attr.aria-label]="isWishlisted() ? 'Remove from wishlist' : 'Add to wishlist'"
+          >
+            <i
+              class="bi"
+              [class.bi-heart-fill]="isWishlisted()"
+              [class.bi-heart]="!isWishlisted()"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </div>
+
+        <div class="brooch-full-view-note">
+          <i class="bi bi-truck" aria-hidden="true"></i>
+          <span><strong>Delivery across India</strong><small>Shipping options are shown at checkout.</small></span>
+        </div>
+        <div class="brooch-full-view-note">
+          <i class="bi bi-shield-check" aria-hidden="true"></i>
+          <span><strong>Secure online payment</strong><small>Carefully packed for your creative projects.</small></span>
+        </div>
+      </div>
+    </section>
+  } @else {
+    <section class="brooch-full-view-not-found" role="status">
+      <h1>Product not found</h1>
+      <p>Choose a flower from the Brooch Material catalog to view its details.</p>
+      <a class="brooch-full-view-add" [routerLink]="['/brooch-materials-view']" [queryParams]="{ q: 'Flowers' }">
+        Browse Flowers
+      </a>
+    </section>
+  }
+</main>

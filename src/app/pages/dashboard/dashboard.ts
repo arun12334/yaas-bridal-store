@@ -23,6 +23,13 @@ interface DashboardMenuSection {
   cards: DashboardCategoryCard[];
 }
 
+interface TrendingMaterial {
+  name: string;
+  description: string;
+  image: string;
+  route: string;
+}
+
 @Component({
   selector: 'app-dashboard',
   imports: [CurrencyPipe, DecimalPipe, FormsModule, NgOptimizedImage, RouterLink, WelcomeAnimation],
@@ -55,6 +62,47 @@ export class Dashboard implements OnInit {
     'assets/dashboard/banner-3.png',
     'assets/dashboard/banner-4.png',
   ];
+
+  readonly trendingMaterials: TrendingMaterial[] = [
+    {
+      name: 'Sugar Beads',
+      description: 'Bring a little sparkle to every stitch.',
+      image: this.imageUrls.beads,
+      route: '/aari-material',
+    },
+    {
+      name: 'Stone Chain',
+      description: 'Add a graceful finish to your designs.',
+      image: this.imageUrls.stones,
+      route: '/aari-material',
+    },
+    {
+      name: 'Zardosi Thread',
+      description: 'Create rich details with traditional thread.',
+      image: this.imageUrls.threads,
+      route: '/aari-material',
+    },
+    {
+      name: 'Aari Needles',
+      description: 'Find the right tools for detailed handiwork.',
+      image: this.imageUrls.tailoring,
+      route: '/aari-material',
+    },
+    {
+      name: 'Embroidery Tools',
+      description: 'The little essentials behind beautiful work.',
+      image: this.imageUrls.tools,
+      route: '/aari-material',
+    },
+    {
+      name: 'Bead Chains',
+      description: 'Give your festive projects a sparkling finish.',
+      image: this.imageUrls.beads,
+      route: '/aari-material',
+    },
+  ];
+
+  readonly trendingVideo = 'assets/videos/aari-video.mp4';
 
   readonly menuSections: DashboardMenuSection[] = [
     {
