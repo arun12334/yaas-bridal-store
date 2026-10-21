@@ -24,6 +24,7 @@ interface AboutReason {
 })
 export class About {
   readonly banners: AboutBanner[] = [
+    
     {
       alt: 'Aari embroidery kit with threads, needles, beads and fabric',
       image: 'assets/about/banner-3.png',
