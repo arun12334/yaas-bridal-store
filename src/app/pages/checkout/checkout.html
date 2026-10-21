@@ -1,0 +1,50 @@
+<main class="c334820-CHECK-750146-OUT-checkout-page">
+  <div class="container-xl c334820-CHECK-750146-OUT-checkout-wrap">
+    <div class="c334820-CHECK-750146-OUT-checkout-top"><a class="c334820-CHECK-750146-OUT-brand" routerLink="/dashboard"><span class="c334820-CHECK-750146-OUT-brand-mark"><i class="bi bi-flower1"></i></span><span class="c334820-CHECK-750146-OUT-brand-copy"><strong>TAMILAN</strong><small>PRODUCTS</small></span></a><div class="c334820-CHECK-750146-OUT-breadcrumbs"><a routerLink="/cart">Cart</a> <i class="bi bi-chevron-right"></i> Checkout <i class="bi bi-chevron-right"></i> Payment</div></div>
+    @if (store.cart().length) {
+      <div class="c334820-CHECK-750146-OUT-checkout-layout">
+        <section class="c334820-CHECK-750146-OUT-checkout-form-panel">
+          <div class="c334820-CHECK-750146-OUT-checkout-step"><span>1</span><div><h1>Contact & delivery</h1><p>Where should we send your order?</p></div></div>
+          <form #checkoutForm="ngForm" (ngSubmit)="submitOrder()">
+            <div class="c334820-CHECK-750146-OUT-form-section">
+              <label for="checkoutEmail">Email address</label><input id="checkoutEmail" name="email" type="email" required [(ngModel)]="details.email" placeholder="you@example.com">
+              <label class="c334820-CHECK-750146-OUT-check-label"><input type="checkbox" checked> Email me with news and offers</label>
+            </div>
+            <div class="c334820-CHECK-750146-OUT-form-section">
+              <h3>Delivery address</h3>
+              <div class="c334820-CHECK-750146-OUT-form-grid c334820-CHECK-750146-OUT-two">
+                <label>Full name<input name="name" required [(ngModel)]="details.name" placeholder="Full name"></label>
+                <label>Phone number<input name="phone" type="tel" pattern="[0-9+() -]{8,16}" required [(ngModel)]="details.phone" placeholder="+91"></label>
+              </div>
+              <label>Address<input name="address" required [(ngModel)]="details.address" placeholder="House number, street, area"></label>
+              <div class="c334820-CHECK-750146-OUT-form-grid c334820-CHECK-750146-OUT-two">
+                <label>City<input name="city" required [(ngModel)]="details.city" placeholder="City"></label>
+                <label>PIN code<input name="pincode" inputmode="numeric" pattern="[0-9]{6}" required [(ngModel)]="details.pincode" placeholder="6-digit PIN code"></label>
+              </div>
+              <p class="c334820-CHECK-750146-OUT-address-note"><i class="bi bi-geo-alt"></i> Store address: Kamaraj Rd, Puspa Nagar, Tiruppur, Tamil Nadu 641604</p>
+            </div>
+            <div class="c334820-CHECK-750146-OUT-form-section">
+              <h3>Payment method</h3>
+              <label class="c334820-CHECK-750146-OUT-payment-choice"><input type="radio" name="payment" value="upi" [(ngModel)]="payment"><span><b>UPI / QR payment</b><small>Pay using your UPI app through a connected gateway.</small></span><i class="bi bi-qr-code"></i></label>
+              <label class="c334820-CHECK-750146-OUT-payment-choice"><input type="radio" name="payment" value="card" [(ngModel)]="payment"><span><b>Credit or debit card</b><small>Secure card payment through a payment provider.</small></span><i class="bi bi-credit-card"></i></label>
+              <label class="c334820-CHECK-750146-OUT-payment-choice"><input type="radio" name="payment" value="netbanking" [(ngModel)]="payment"><span><b>Net banking</b><small>Pay through your bank.</small></span><i class="bi bi-bank"></i></label>
+              <div class="c334820-CHECK-750146-OUT-cod-note"><i class="bi bi-info-circle"></i> Cash on delivery is not available. This demo uses simulated payment; connect a real payment gateway before launch.</div>
+            </div>
+            <button type="submit" class="btn c334820-CHECK-750146-OUT-btn-brand btn-lg w-100" [disabled]="checkoutForm.invalid">Continue to Payment <i class="bi bi-arrow-right ms-2"></i></button>
+          </form>
+        </section>
+        <aside class="c334820-CHECK-750146-OUT-checkout-summary">
+          <h2>Your order</h2>
+          @for (line of store.cart(); track line.product.id) {
+            <div class="c334820-CHECK-750146-OUT-checkout-item"><img [src]="line.product.image" [alt]="line.product.name"><div><b>{{ line.product.name }}</b><small>Qty: {{ line.quantity }}</small></div><strong>{{ line.product.price * line.quantity | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+          }
+          <div class="c334820-CHECK-750146-OUT-summary-line"><span>Subtotal</span><strong>{{ store.cartTotal() | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+          <div class="c334820-CHECK-750146-OUT-summary-line"><span>Shipping</span><strong>{{ store.cartTotal() >= 999 ? 'Free' : 'Calculated at checkout' }}</strong></div>
+          <div class="c334820-CHECK-750146-OUT-summary-line c334820-CHECK-750146-OUT-total"><span>Total</span><strong>{{ store.cartTotal() | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+        </aside>
+      </div>
+    } @else {
+      <div class="c334820-CHECK-750146-OUT-empty-page"><i class="bi bi-bag"></i><h2>Your cart is empty</h2><p>Add items before continuing to checkout.</p><a routerLink="/collections" class="btn c334820-CHECK-750146-OUT-btn-brand">Explore collections</a></div>
+    }
+  </div>
+</main>

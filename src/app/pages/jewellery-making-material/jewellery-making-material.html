@@ -1,0 +1,27 @@
+<main class="container-xl py-5">
+  <section aria-labelledby="jewellery-material-title">
+    <div class="jewellery-material-heading">
+      <div>
+        <p class="jewellery-material-eyebrow">Explore our collections</p>
+        <h1 id="jewellery-material-title">Jewellery Making Material</h1>
+      </div>
+      <a class="jewellery-material-view-all" routerLink="/collections">
+        View all <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="jewellery-material-grid">
+      @for (category of categories; track category.name) {
+        <a class="jewellery-material-card" [routerLink]="['/collection']" [queryParams]="{ q: category.searchTerm }">
+          <div class="jewellery-material-card-image">
+            <img [ngSrc]="category.image" [alt]="category.name" width="720" height="540" loading="lazy">
+            <span class="jewellery-material-card-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          </div>
+          <div class="jewellery-material-card-info">
+            <h2>{{ category.name }}</h2>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+</main>

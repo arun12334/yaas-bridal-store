@@ -1,0 +1,17 @@
+<main>
+        <section class="container-xl c582614-ACCT-409851-PROF-page-section">
+            <div class="c582614-ACCT-409851-PROF-account-card">
+                <div class="c582614-ACCT-409851-PROF-account-icon"><i class="bi bi-person"></i></div><span class="c582614-ACCT-409851-PROF-eyebrow">WELCOME TO TAMILAN
+                    PRODUCTS</span>
+                <h1>Your account</h1>
+                <p>Use this sample form to preview the account experience.</p>
+                <form (ngSubmit)="saveAccount()"><label>Full name<input name="name" [(ngModel)]="account.name" required
+                            placeholder="Your full name"></label><label>Email address<input name="email" [(ngModel)]="account.email"
+                            type="email" required placeholder="you@example.com"></label><label>Phone number<input name="phone" [(ngModel)]="account.phone"
+                            type="tel" required placeholder="+91"></label><button
+                        class="btn c582614-ACCT-409851-PROF-btn-brand w-100 mt-3" type="submit">Continue</button></form>
+                <div class="c582614-ACCT-409851-PROF-inline-success" [class.c582614-ACCT-409851-PROF-show]="message()" aria-live="polite">{{ message() }}</div><small class="c582614-ACCT-409851-PROF-account-disclaimer">Demo only.
+                    Connect a secure authentication service before production.</small>
+            </div>
+        </section>
+    </main>

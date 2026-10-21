@@ -1,0 +1,75 @@
+.c638920-PAY-417503-NOW-btn-brand{background:var(--brand);color:white;border:1px solid var(--brand);border-radius:28px;font-weight:700;padding:12px 24px;transition:.2s}.c638920-PAY-417503-NOW-btn-brand:hover{background:var(--brand-dark);color:white;transform:translateY(-2px)}.c638920-PAY-417503-NOW-btn-outline-brand{border:1px solid var(--brand);color:var(--brand);border-radius:25px;font-weight:700;padding:11px 20px}.c638920-PAY-417503-NOW-btn-outline-brand:hover{background:var(--brand);color:white}
+
+.c638920-PAY-417503-NOW-page-hero {
+    padding: 42px 0 45px;
+    background: linear-gradient(120deg, #f8f1f4, #f6edf2)
+}
+
+.c638920-PAY-417503-NOW-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 45px);
+    margin: 12px 0
+}
+
+.c638920-PAY-417503-NOW-page-hero p {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.7
+}
+
+.c638920-PAY-417503-NOW-breadcrumbs {
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px
+}
+
+.c638920-PAY-417503-NOW-breadcrumbs a {
+    color: var(--brand)
+}
+
+.c638920-PAY-417503-NOW-compact-hero {
+    padding: 28px 0 30px
+}
+
+.c638920-PAY-417503-NOW-page-section {
+    padding-top: 55px;
+    padding-bottom: 70px
+}
+
+.c638920-PAY-417503-NOW-payment-placeholder {
+    padding: 25px 15px;
+    border: 1px dashed #d6d6e1;
+    border-radius: 12px
+}
+
+.c638920-PAY-417503-NOW-payment-placeholder>i {
+    font-size: 42px;
+    color: var(--brand)
+}
+
+.c638920-PAY-417503-NOW-payment-placeholder h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 12px 0
+}
+
+.c638920-PAY-417503-NOW-payment-placeholder p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.7
+}
+
+@media(max-width:767px) {
+    .c638920-PAY-417503-NOW-page-hero {
+        padding: 30px 0
+    }
+
+    .c638920-PAY-417503-NOW-page-section {
+        padding-top: 35px;
+        padding-bottom: 45px
+    }
+}

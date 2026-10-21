@@ -1,0 +1,73 @@
+.c750183-PRIV-906214-POLICY-page-hero {
+    padding: 42px 0 45px;
+    background: linear-gradient(120deg, #f8f1f4, #f6edf2)
+}
+
+.c750183-PRIV-906214-POLICY-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 45px);
+    margin: 12px 0
+}
+
+.c750183-PRIV-906214-POLICY-page-hero p {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.7
+}
+
+.c750183-PRIV-906214-POLICY-breadcrumbs {
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px
+}
+
+.c750183-PRIV-906214-POLICY-breadcrumbs a {
+    color: var(--brand)
+}
+
+.c750183-PRIV-906214-POLICY-compact-hero {
+    padding: 28px 0 30px
+}
+
+.c750183-PRIV-906214-POLICY-page-section {
+    padding-top: 55px;
+    padding-bottom: 70px
+}
+
+.c750183-PRIV-906214-POLICY-policy-content {
+    max-width: 850px
+}
+
+.c750183-PRIV-906214-POLICY-policy-content h2 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 30px 0 10px
+}
+
+.c750183-PRIV-906214-POLICY-policy-content p {
+    line-height: 1.8;
+    color: #5f5f68
+}
+
+.c750183-PRIV-906214-POLICY-policy-updated {
+    margin-top: 40px;
+    padding: 15px;
+    background: #fff6ed;
+    border-radius: 8px;
+    font-size: 12px
+}
+
+@media(max-width:767px) {
+    .c750183-PRIV-906214-POLICY-page-hero {
+        padding: 30px 0
+    }
+
+    .c750183-PRIV-906214-POLICY-page-section {
+        padding-top: 35px;
+        padding-bottom: 45px
+    }
+}

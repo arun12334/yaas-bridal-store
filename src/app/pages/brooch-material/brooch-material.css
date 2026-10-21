@@ -1,0 +1,133 @@
+.brooch-material-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.brooch-material-eyebrow {
+  margin: 0 0 7px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brooch-material-heading h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+}
+
+.brooch-material-view-all {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.brooch-material-view-all:hover {
+  color: var(--accent);
+}
+
+.brooch-material-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.brooch-material-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #fff;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.brooch-material-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px #1112;
+}
+
+.brooch-material-card-image {
+  position: relative;
+  height: 195px;
+  overflow: hidden;
+  background: #f0efec;
+}
+
+.brooch-material-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s;
+}
+
+.brooch-material-card:hover .brooch-material-card-image img {
+  transform: scale(1.06);
+}
+
+.brooch-material-card-arrow {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffffed;
+  color: var(--brand);
+}
+
+.brooch-material-card-info {
+  min-height: 70px;
+  padding: 16px 14px;
+}
+
+.brooch-material-card-info h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.brooch-material-card:focus-visible,
+.brooch-material-view-all:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 1100px) {
+  .brooch-material-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .brooch-material-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .brooch-material-card-image {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brooch-material-card-image {
+    height: 150px;
+  }
+
+  .brooch-material-card-info {
+    padding: 12px;
+  }
+}

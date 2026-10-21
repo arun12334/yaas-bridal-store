@@ -1,0 +1,53 @@
+<section class="dashboard-chat" [class.dashboard-chat-expanded]="chatOpen()" aria-label="Chat with Tamilan Products">
+  @if (chatOpen()) {
+    <div class="dashboard-chat-panel" id="dashboard-chat-panel">
+      <header class="dashboard-chat-header">
+        <span class="dashboard-chat-brand-icon" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+        <div>
+          <h2>Chat with us</h2>
+          <p><span class="dashboard-chat-online-dot"></span> We’re here to help</p>
+        </div>
+        <button type="button" (click)="chatOpen.set(false)" aria-label="Close chat"><i class="bi bi-x-lg"></i></button>
+      </header>
+
+      <form class="dashboard-chat-form" (ngSubmit)="startChat()">
+        <label for="chat-phone">Phone number <span>(required)</span></label>
+        <input id="chat-phone" type="tel" name="chatPhone" [(ngModel)]="chatForm.phone" autocomplete="tel" placeholder="Enter your phone number" required>
+
+        <label for="chat-email">Email address <span>(required)</span></label>
+        <input id="chat-email" type="email" name="chatEmail" [(ngModel)]="chatForm.email" autocomplete="email" placeholder="Enter your email address" required>
+
+        <label for="chat-department">Choose a department</label>
+        <select id="chat-department" name="chatDepartment" [(ngModel)]="chatForm.department" required>
+          <option value="" disabled>Select a topic</option>
+          <option value="product enquiry">Product enquiry</option>
+          <option value="order support">Order support</option>
+          <option value="shipping and delivery">Shipping and delivery</option>
+          <option value="other enquiry">Other enquiry</option>
+        </select>
+
+        <label class="visually-hidden" for="chat-message">Your message</label>
+        <textarea id="chat-message" name="chatMessage" [(ngModel)]="chatForm.message" placeholder="Type your message here..." required></textarea>
+
+        <button class="dashboard-chat-submit" type="submit">
+          Start chat <i class="bi bi-whatsapp" aria-hidden="true"></i>
+        </button>
+      </form>
+    </div>
+  } @else {
+    <div class="dashboard-chat-prompt" aria-hidden="true">
+      <strong>We’re online!</strong>
+      <span>How may we help you today?</span>
+    </div>
+  }
+
+  <button
+    class="dashboard-chat-launcher"
+    type="button"
+    (click)="chatOpen.update(open => !open)"
+    [attr.aria-expanded]="chatOpen()"
+    [attr.aria-controls]="chatOpen() ? 'dashboard-chat-panel' : null"
+    [attr.aria-label]="chatOpen() ? 'Close chat' : 'Chat with us'">
+    <i [class]="chatOpen() ? 'bi bi-x-lg' : 'bi bi-chat-dots-fill'" aria-hidden="true"></i>
+  </button>
+</section>

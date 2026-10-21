@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#faf9f6"/><stop offset="1" stop-color="#e8e5df"/></linearGradient>
+    <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#93681f"/><stop offset=".3" stop-color="#f7d77a"/><stop offset=".55" stop-color="#c18b2b"/><stop offset=".8" stop-color="#ffe39a"/><stop offset="1" stop-color="#99671e"/></linearGradient>
+    <linearGradient id="red" x2="1" y2="0"><stop stop-color="#711d2c"/><stop offset=".45" stop-color="#c24a55"/><stop offset=".7" stop-color="#f08d83"/><stop offset="1" stop-color="#872538"/></linearGradient>
+    <linearGradient id="ivory" x2="1" y2="0"><stop stop-color="#aeb1ac"/><stop offset=".4" stop-color="#fff"/><stop offset=".7" stop-color="#e4e4dc"/><stop offset="1" stop-color="#93968f"/></linearGradient>
+    <filter id="s"><feDropShadow dx="3" dy="9" stdDeviation="8" flood-color="#493b2b" flood-opacity=".2"/></filter>
+  </defs>
+  <rect width="720" height="540" fill="url(#bg)"/>
+  <g filter="url(#s)">
+    <g transform="translate(105 94)"><path d="M32 20h135v300H32z" fill="#f3eee4"/><ellipse cx="99" cy="20" rx="67" ry="19" fill="#fff"/><ellipse cx="99" cy="320" rx="67" ry="19" fill="#d8d3c8"/><path d="M36 45q63-22 126 0v243q-63 23-126 0Z" fill="url(#gold)"/><path d="M36 72q63-22 126 0M36 100q63-22 126 0M36 128q63-22 126 0M36 156q63-22 126 0M36 184q63-22 126 0M36 212q63-22 126 0M36 240q63-22 126 0M36 268q63-22 126 0" fill="none" stroke="#f7dfa0" stroke-width="5" opacity=".8"/></g>
+    <g transform="translate(292 126)"><path d="M25 18h138v265H25z" fill="#f3eee4"/><ellipse cx="94" cy="18" rx="69" ry="18" fill="#fff"/><ellipse cx="94" cy="283" rx="69" ry="18" fill="#d8d3c8"/><path d="M29 44q65-22 130 0v203q-65 22-130 0Z" fill="url(#red)"/><path d="M29 69q65-22 130 0M29 96q65-22 130 0M29 123q65-22 130 0M29 150q65-22 130 0M29 177q65-22 130 0M29 204q65-22 130 0M29 231q65-22 130 0" fill="none" stroke="#f6c0ad" stroke-width="5" opacity=".65"/></g>
+    <g transform="translate(477 174)"><path d="M19 15h135v218H19z" fill="#f3eee4"/><ellipse cx="86" cy="15" rx="67" ry="17" fill="#fff"/><ellipse cx="86" cy="233" rx="67" ry="17" fill="#d8d3c8"/><path d="M23 38q63-19 127 0v167q-64 20-127 0Z" fill="url(#ivory)"/><path d="M23 63q63-19 127 0M23 89q63-19 127 0M23 115q63-19 127 0M23 141q63-19 127 0M23 167q63-19 127 0M23 193q63-19 127 0" fill="none" stroke="#fff" stroke-width="5"/></g>
+  </g>
+</svg>

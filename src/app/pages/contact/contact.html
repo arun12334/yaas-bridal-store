@@ -1,0 +1,37 @@
+<main>
+        <section class="c815204-CONTACT-579136-US-page-hero">
+            <div class="container-xl">
+                <div class="c815204-CONTACT-579136-US-breadcrumbs"><a routerLink="/dashboard">Home</a> <i class="bi bi-chevron-right"></i> Contact
+                </div><span class="c815204-CONTACT-579136-US-eyebrow">WE'RE HERE TO HELP</span>
+                <h1>Contact Tamilan Products</h1>
+                <p>Questions about materials or an order? Send us a message.</p>
+            </div>
+        </section>
+        <section class="container-xl c815204-CONTACT-579136-US-page-section c815204-CONTACT-579136-US-contact-layout">
+            <div class="c815204-CONTACT-579136-US-contact-info-card">
+                <h2>Let's talk craft.</h2>
+                <p>Reach out to our team for product enquiries and shopping assistance.</p>
+                <div class="c815204-CONTACT-579136-US-footer-contact"><i class="bi bi-geo-alt"></i><span>Kamaraj Rd, Puspa Nagar, Tiruppur, Tamil
+                        Nadu 641604</span></div><a class="c815204-CONTACT-579136-US-footer-contact" href="tel:+919688526199"><i
+                        class="bi bi-telephone"></i><span>+91 96885 26199</span></a><a class="c815204-CONTACT-579136-US-footer-contact"
+                    href="mailto:info@tamilanproducts.in"><i
+                        class="bi bi-envelope"></i><span>info@tamilanproducts.in</span></a>
+                <iframe
+                    class="c815204-CONTACT-579136-US-contact-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.107911264138!2d76.9513742!3d11.0305299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba858eddb8a7c67%3A0xde15f8e90b629aa9!2sNew%20Bus%20Stand%20-%20Mettupalayam%20Road%2C%20Coimbatore!5e0!3m2!1sen!2sin!4v1792569903511!5m2!1sen!2sin"
+                    title="Google Maps location for New Bus Stand, Mettupalayam Road, Coimbatore"
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+            <form class="c815204-CONTACT-579136-US-contact-form-card" (ngSubmit)="submit()">
+                <h2>Send a message</h2><label>Your name<input id="contactName" required
+                        name="name" [(ngModel)]="form.name" placeholder="Name"></label><label>Email address<input id="contactEmail" type="email" required
+                        name="email" [(ngModel)]="form.email" placeholder="Email"></label><label>Message<textarea id="contactMessage" rows="5" required
+                        name="message" [(ngModel)]="form.message"
+                        placeholder="How can we help?"></textarea></label><button class="btn c815204-CONTACT-579136-US-btn-brand"
+                    type="submit">Send message <i class="bi bi-arrow-right ms-2"></i></button>
+                <div class="c815204-CONTACT-579136-US-inline-success" [class.c815204-CONTACT-579136-US-show]="successMessage()" aria-live="polite">{{ successMessage() }}</div>
+            </form>
+        </section>
+    </main>

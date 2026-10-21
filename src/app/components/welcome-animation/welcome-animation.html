@@ -1,0 +1,42 @@
+<div class="welcome-celebration-backdrop">
+  <section
+    class="welcome-celebration"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="welcome-celebration-title"
+    aria-describedby="welcome-celebration-message">
+    <div class="welcome-confetti" aria-hidden="true">
+      @for (piece of confettiPieces; track piece) {
+        <span [style.left.%]="(piece * 37 + 5) % 100"></span>
+      }
+    </div>
+    <div class="welcome-streamers" aria-hidden="true">
+      @for (streamer of streamers; track streamer) {
+        <span [style.left.%]="(streamer * 47 + 9) % 100"></span>
+      }
+    </div>
+
+    <button class="welcome-close" type="button" (click)="dismiss()" aria-label="Close welcome message">
+      <i class="bi bi-x-lg" aria-hidden="true"></i>
+    </button>
+
+    <div class="welcome-profile-scene" aria-hidden="true">
+      <div class="welcome-profile-orbit welcome-profile-orbit-one"></div>
+      <div class="welcome-profile-orbit welcome-profile-orbit-two"></div>
+      <div class="welcome-profile-coin">
+        <span class="welcome-profile-ring">
+          <i class="bi bi-person-fill"></i>
+        </span>
+      </div>
+      <span class="welcome-profile-spark welcome-profile-spark-one">✦</span>
+      <span class="welcome-profile-spark welcome-profile-spark-two">✧</span>
+    </div>
+
+    <span class="welcome-celebration-eyebrow"><i class="bi bi-flower1" aria-hidden="true"></i> TAMILAN PRODUCTS</span>
+    <h2 id="welcome-celebration-title">Welcome to our creative family!</h2>
+    <p id="welcome-celebration-message">We’re so happy you’re here. Let’s make something beautiful together.</p>
+    <button class="welcome-explore-button" type="button" (click)="dismiss()">
+      Start exploring <i class="bi bi-arrow-right" aria-hidden="true"></i>
+    </button>
+  </section>
+</div>

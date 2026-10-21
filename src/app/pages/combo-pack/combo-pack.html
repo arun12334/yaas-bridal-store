@@ -1,0 +1,27 @@
+<main class="container-xl py-5">
+  <section aria-labelledby="combo-pack-title">
+    <div class="combo-pack-heading">
+      <div>
+        <p class="combo-pack-eyebrow">Explore our collections</p>
+        <h1 id="combo-pack-title">Combo Pack</h1>
+      </div>
+      <a class="combo-pack-view-all" routerLink="/collections">
+        View all <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="combo-pack-grid">
+      @for (category of categories; track category.id) {
+        <a class="combo-pack-card" routerLink="/collections" [attr.aria-label]="category.title">
+          <div class="combo-pack-card-image">
+            <img [ngSrc]="category.image" [alt]="category.title" [width]="category.width" [height]="category.height" loading="lazy">
+            <span class="combo-pack-card-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          </div>
+          <div class="combo-pack-card-info">
+            <h2>{{ category.title }}</h2>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+</main>

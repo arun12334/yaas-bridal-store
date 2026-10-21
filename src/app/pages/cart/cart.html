@@ -1,0 +1,48 @@
+<main>
+        <section class="c847215-CART-512709-PAGE-page-hero c847215-CART-512709-PAGE-compact-hero">
+            <div class="container-xl">
+                <div class="c847215-CART-512709-PAGE-breadcrumbs"><a routerLink="/dashboard">Home</a> <i class="bi bi-chevron-right"></i> Cart</div>
+                <h1>Shopping Cart</h1>
+                <p>Review your selected items before checkout.</p>
+            </div>
+        </section>
+        <section class="container-xl c847215-CART-512709-PAGE-page-section">
+            <div class="c847215-CART-512709-PAGE-cart-page-layout">
+                <div>
+                    @if (store.cart().length) {
+                        <div class="c847215-CART-512709-PAGE-cart-table-head"><span>Product</span><span>Price</span><span>Quantity</span><span>Total</span></div>
+                        @for (line of store.cart(); track line.product.id) {
+                            <div class="c847215-CART-512709-PAGE-cart-table-row">
+                                <div class="c847215-CART-512709-PAGE-cart-product"><img [src]="line.product.image" [alt]="line.product.name"><div><b>{{ line.product.name }}</b><button type="button" class="c847215-CART-512709-PAGE-remove-link" (click)="store.removeFromCart(line.product.id)">Remove</button></div></div>
+                                <span>{{ line.product.price | currency:'INR':'symbol':'1.2-2' }}</span>
+                                <div class="c847215-CART-512709-PAGE-qty-control"><button type="button" (click)="store.changeQuantity(line.product.id, -1)" aria-label="Decrease quantity">−</button><span>{{ line.quantity }}</span><button type="button" (click)="store.changeQuantity(line.product.id, 1)" aria-label="Increase quantity">+</button></div>
+                                <b>{{ line.product.price * line.quantity | currency:'INR':'symbol':'1.2-2' }}</b>
+                            </div>
+                        }
+                    } @else {
+                        <div class="c847215-CART-512709-PAGE-empty-page"><i class="bi bi-bag"></i><h3>Your cart is empty</h3><p>Find something lovely for your next creation.</p><a class="btn c847215-CART-512709-PAGE-btn-brand" routerLink="/collections">Continue shopping</a></div>
+                    }
+                </div>
+                <aside class="c847215-CART-512709-PAGE-cart-summary">
+                    <h3>Order summary</h3>
+                    <div class="c847215-CART-512709-PAGE-shipping-progress">
+                        <div class="progress-track"><span [style.width.%]="shippingProgress"></span></div>
+                        <p>Free shipping on orders above ₹999.</p>
+                    </div>
+                    <div class="c847215-CART-512709-PAGE-summary-line"><span>Subtotal</span><strong>{{ store.cartTotal() | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+                    <div class="c847215-CART-512709-PAGE-summary-line"><span>Shipping</span><span>{{ store.cartTotal() >= freeShippingThreshold ? 'Free' : 'Calculated at checkout' }}</span></div>
+                    <p class="c847215-CART-512709-PAGE-summary-note">Taxes and shipping are calculated at checkout.</p><a
+                        class="btn c847215-CART-512709-PAGE-btn-brand w-100" routerLink="/checkout">Proceed to Checkout <i
+                        class="bi bi-arrow-right ms-2"></i></a><a class="btn c847215-CART-512709-PAGE-btn-outline-brand w-100 mt-2"
+                        routerLink="/collections">Continue shopping</a>
+                    <div class="c847215-CART-512709-PAGE-secure-note"><i class="bi bi-shield-check"></i> Secure online payment · COD not
+                        available</div>
+                </aside>
+            </div>
+            <div class="c847215-CART-512709-PAGE-cart-benefits">
+                <div><i class="bi bi-chat-dots"></i><b>Have questions?</b><span>Our team is here to help.</span></div>
+                <div><i class="bi bi-shield-lock"></i><b>Secure shopping</b><span>Safe checkout experience.</span></div>
+                <div><i class="bi bi-heart"></i><b>Made for makers</b><span>Materials for your creativity.</span></div>
+            </div>
+        </section>
+    </main>

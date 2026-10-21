@@ -1,0 +1,72 @@
+.c273946-WISH-805317-LIST-btn-brand{background:var(--brand);color:white;border:1px solid var(--brand);border-radius:28px;font-weight:700;padding:12px 24px;transition:.2s}.c273946-WISH-805317-LIST-btn-brand:hover{background:var(--brand-dark);color:white;transform:translateY(-2px)}.c273946-WISH-805317-LIST-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.c273946-WISH-805317-LIST-product-card{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;transition:transform .25s,box-shadow .25s;min-width:0}.c273946-WISH-805317-LIST-product-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px #14152a10}.c273946-WISH-805317-LIST-product-image{height:235px;position:relative;background:#f5f4f1;overflow:hidden}.c273946-WISH-805317-LIST-product-image img{width:100%;height:100%;object-fit:cover;transition:transform .45s}.c273946-WISH-805317-LIST-product-card:hover .c273946-WISH-805317-LIST-product-image img{transform:scale(1.06)}.c273946-WISH-805317-LIST-product-wish{position:absolute;top:11px;right:11px;border:0;border-radius:50%;width:34px;height:34px;background:#fff;color:#222;display:grid;place-items:center;box-shadow:0 2px 10px #0001;opacity:0;transition:.2s}.c273946-WISH-805317-LIST-product-card:hover .c273946-WISH-805317-LIST-product-wish, .c273946-WISH-805317-LIST-product-wish.c273946-WISH-805317-LIST-saved{opacity:1}.c273946-WISH-805317-LIST-product-wish.c273946-WISH-805317-LIST-saved{color:var(--accent)}.c273946-WISH-805317-LIST-product-info{padding:15px 14px 16px;text-align:center}.c273946-WISH-805317-LIST-product-title{font-size:12px;line-height:1.5;font-weight:700;min-height:38px;margin:0 0 10px}.c273946-WISH-805317-LIST-product-price{font-size:16px;font-weight:800;margin-bottom:14px}.c273946-WISH-805317-LIST-product-actions{display:flex;gap:7px}.c273946-WISH-805317-LIST-product-actions button{flex:1;font-size:12px;padding:10px 7px}.c273946-WISH-805317-LIST-btn-add{border:0;background:var(--brand);color:#fff;border-radius:25px;font-weight:700}.c273946-WISH-805317-LIST-btn-add:hover{background:var(--brand-dark);color:white}.c273946-WISH-805317-LIST-btn-outline-brand{border:1px solid var(--brand);color:var(--brand);border-radius:25px;font-weight:700;padding:11px 20px}.c273946-WISH-805317-LIST-btn-outline-brand:hover{background:var(--brand);color:white}@media(max-width:991px){.c273946-WISH-805317-LIST-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:767px){.c273946-WISH-805317-LIST-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.c273946-WISH-805317-LIST-product-image{height:175px}.c273946-WISH-805317-LIST-product-info{padding:12px 9px}.c273946-WISH-805317-LIST-product-title{font-size:11px;min-height:50px}.c273946-WISH-805317-LIST-product-price{font-size:14px}.c273946-WISH-805317-LIST-product-actions{display:block}.c273946-WISH-805317-LIST-product-actions button{width:100%;margin-top:4px;font-size:11px;padding:10px 4px}.c273946-WISH-805317-LIST-product-wish{opacity:1;width:30px;height:30px}
+    .c273946-WISH-805317-LIST-page-hero {
+        padding: 30px 0
+    }
+
+    .c273946-WISH-805317-LIST-page-section {
+        padding-top: 35px;
+        padding-bottom: 45px
+    }}
+
+.c273946-WISH-805317-LIST-page-hero {
+    padding: 42px 0 45px;
+    background: linear-gradient(120deg, #f8f1f4, #f6edf2)
+}
+
+.c273946-WISH-805317-LIST-page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 45px);
+    margin: 12px 0
+}
+
+.c273946-WISH-805317-LIST-page-hero p {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.7
+}
+
+.c273946-WISH-805317-LIST-breadcrumbs {
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px
+}
+
+.c273946-WISH-805317-LIST-breadcrumbs a {
+    color: var(--brand)
+}
+
+.c273946-WISH-805317-LIST-compact-hero {
+    padding: 28px 0 30px
+}
+
+.c273946-WISH-805317-LIST-page-section {
+    padding-top: 55px;
+    padding-bottom: 70px
+}
+
+.c273946-WISH-805317-LIST-empty-page {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 65px 20px;
+    border: 1px dashed #ddd;
+    border-radius: 14px
+}
+
+.c273946-WISH-805317-LIST-empty-page>i {
+    font-size: 42px;
+    color: #c8c8d0
+}
+
+.c273946-WISH-805317-LIST-empty-page h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 12px 0
+}
+
+.c273946-WISH-805317-LIST-empty-page p {
+    color: var(--muted)
+}

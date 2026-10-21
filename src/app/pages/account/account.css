@@ -1,0 +1,106 @@
+.c582614-ACCT-409851-PROF-eyebrow{font-size:11px;letter-spacing:2px;font-weight:800;color:var(--accent);display:inline-flex;align-items:center;gap:7px}.c582614-ACCT-409851-PROF-btn-brand{background:var(--brand);color:white;border:1px solid var(--brand);border-radius:28px;font-weight:700;padding:12px 24px;transition:.2s}.c582614-ACCT-409851-PROF-btn-brand:hover{background:var(--brand-dark);color:white;transform:translateY(-2px)}
+
+.c582614-ACCT-409851-PROF-page-section {
+    padding-top: 55px;
+    padding-bottom: 70px
+}
+
+.c582614-ACCT-409851-PROF-account-card label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 13px
+}
+
+.c582614-ACCT-409851-PROF-account-card input {
+    display: block;
+    width: 100%;
+    border: 1px solid #dedee4;
+    border-radius: 9px;
+    padding: 13px 14px;
+    outline-color: var(--brand);
+    margin-top: 7px;
+    font-weight: 400;
+    font-size: 13px
+}
+
+.c582614-ACCT-409851-PROF-account-card {
+    max-width: 610px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 45px 35px;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    box-shadow: 0 15px 50px #1b1d390c
+}
+
+.c582614-ACCT-409851-PROF-account-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #f4e9ef;
+    color: var(--brand);
+    font-size: 29px
+}
+
+.c582614-ACCT-409851-PROF-account-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 12px 0
+}
+
+.c582614-ACCT-409851-PROF-account-card>p {
+    color: #777;
+    line-height: 1.7
+}
+
+.c582614-ACCT-409851-PROF-account-card {
+    max-width: 470px
+}
+
+.c582614-ACCT-409851-PROF-account-card form {
+    text-align: left;
+    margin-top: 25px
+}
+
+.c582614-ACCT-409851-PROF-account-disclaimer {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    margin-top: 18px
+}
+
+.c582614-ACCT-409851-PROF-inline-success {
+    display: none;
+    text-align: left;
+    color: #207547;
+    background: #eaf8ef;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-top: 14px
+}
+
+.c582614-ACCT-409851-PROF-inline-success.c582614-ACCT-409851-PROF-show {
+    display: block
+}
+
+@media(max-width:767px) {
+
+    .c582614-ACCT-409851-PROF-page-section {
+        padding-top: 35px;
+        padding-bottom: 45px
+    }
+
+    .c582614-ACCT-409851-PROF-account-card {
+        padding: 32px 20px
+    }
+
+    .c582614-ACCT-409851-PROF-account-card h1 {
+        font-size: 27px
+    }
+}

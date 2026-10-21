@@ -1,0 +1,17 @@
+<main>
+  <section class="c638920-PAY-417503-NOW-page-hero c638920-PAY-417503-NOW-compact-hero"><div class="container-xl"><div class="c638920-PAY-417503-NOW-breadcrumbs"><a routerLink="/dashboard">Home</a> <i class="bi bi-chevron-right"></i> Payment</div><h1>Complete your payment</h1><p>Review the demo payment details for your order.</p></div></section>
+  <section class="container-xl c638920-PAY-417503-NOW-page-section c638920-PAY-417503-NOW-payment-layout">
+    <div class="c638920-PAY-417503-NOW-payment-placeholder">
+      <i class="bi" [class.bi-qr-code]="method() === 'upi'" [class.bi-credit-card]="method() === 'card'" [class.bi-bank]="method() === 'netbanking'"></i>
+      <h2>{{ paymentLabel }}</h2>
+      <p>This frontend demo does not process real payments. Connect a payment gateway to accept payments securely. No card details are collected or stored here.</p>
+      <div class="c638920-PAY-417503-NOW-payment-details">
+        <div><span>Order</span><strong>{{ orderId() }}</strong></div>
+        <div><span>Amount</span><strong>{{ store.lastOrder()?.total ?? 0 | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+      </div>
+      <button class="btn c638920-PAY-417503-NOW-btn-brand" type="button" (click)="completeDemoPayment()">Simulate payment success</button>
+      <a routerLink="/cart" class="btn c638920-PAY-417503-NOW-btn-outline-brand ms-2">Return to cart</a>
+      <p class="mt-3"><small>Cash on delivery is not available.</small></p>
+    </div>
+  </section>
+</main>

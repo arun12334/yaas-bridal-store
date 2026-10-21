@@ -1,0 +1,39 @@
+<footer class="c324700-SHARED-998412-site-footer">
+  <div class="container-xl">
+    <div class="c324700-SHARED-998412-footer-grid">
+      <div>
+        <a class="c324700-SHARED-998412-brand c324700-SHARED-998412-footer-brand" routerLink="/dashboard">
+          <span class="c324700-SHARED-998412-brand-mark"><i class="bi bi-flower1"></i></span>
+          <span class="c324700-SHARED-998412-brand-copy"><strong>TAMILAN</strong><small>PRODUCTS</small></span>
+        </a>
+        <p class="c324700-SHARED-998412-footer-about">Welcome to Tamilan Products, your destination for Aari work, embroidery, jewellery-making and tailoring materials. Find quality essentials for every creative idea.</p>
+        <div class="c324700-SHARED-998412-footer-contact"><i class="bi bi-geo-alt"></i><span>Kamaraj Rd, Puspa Nagar, Tiruppur, Tamil Nadu 641604</span></div>
+        <a class="c324700-SHARED-998412-footer-contact" href="tel:+919688526199"><i class="bi bi-telephone"></i><span>+91 96885 26199</span></a>
+        <a class="c324700-SHARED-998412-footer-contact" href="mailto:info@tamilanproducts.in"><i class="bi bi-envelope"></i><span>info@tamilanproducts.in</span></a>
+      </div>
+      <div class="c324700-SHARED-998412-footer-col">
+        <h4>Categories</h4>
+        @for (category of categories; track category.category) { <a [routerLink]="['/collection']" [queryParams]="{ category: category.category }">{{ category.name }}</a> }
+        <a routerLink="/collections">All collections</a>
+      </div>
+      <div class="c324700-SHARED-998412-footer-col">
+        <h4>Customer care</h4>
+        <a routerLink="/about">About us</a>
+        <a routerLink="/contact">Contact / Helpline</a><a routerLink="/shipping">Shipping Policy</a>
+        <a routerLink="/refund">Refund Policy</a><a routerLink="/privacy">Privacy Policy</a>
+        <a routerLink="/terms">Terms of Service</a>
+      </div>
+      <div class="c324700-SHARED-998412-footer-col">
+        <h4>Your account</h4>
+        <a routerLink="/login">Log in / Register</a><a routerLink="/wishlist">Wishlist</a>
+        <a routerLink="/cart">Shopping cart</a><a routerLink="/collections">Shop all products</a>
+        <h4 class="mt-4">Secure payments</h4>
+        <div class="c324700-SHARED-998412-payment-icons"><i class="bi bi-credit-card-2-front"></i><i class="bi bi-bank"></i><i class="bi bi-shield-check"></i></div>
+      </div>
+    </div>
+    <div class="c324700-SHARED-998412-footer-bottom">
+      <span>© {{ year }} Tamilan Products. All rights reserved.</span>
+      <span>🎁 100% secure online payment · COD not available</span>
+    </div>
+  </div>
+</footer>

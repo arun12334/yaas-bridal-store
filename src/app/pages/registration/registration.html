@@ -1,0 +1,110 @@
+<main class="registration-page">
+  <div class="registration-shell">
+    <section class="registration-showcase" aria-label="Tamilan Products craft supplies">
+      <div class="registration-showcase-content">
+        <span class="registration-showcase-icon" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+        <span class="registration-showcase-eyebrow">MADE FOR MAKERS</span>
+        <h1>Make room<br>for more <span>creativity.</span></h1>
+        <p>Join our community and find the colours, textures and essentials for your next handmade creation.</p>
+        <div class="registration-benefits">
+          <span><i class="bi bi-stars" aria-hidden="true"></i> Craft essentials for every idea</span>
+          <span><i class="bi bi-heart" aria-hidden="true"></i> Inspiration in every detail</span>
+        </div>
+      </div>
+      <div class="registration-showcase-art" aria-hidden="true">
+        <img ngSrc="/assets/images/craft-hero.svg" alt="" width="1600" height="620">
+      </div>
+      <span class="registration-decoration registration-decoration-one" aria-hidden="true">✿</span>
+      <span class="registration-decoration registration-decoration-two" aria-hidden="true">✧</span>
+    </section>
+
+    <section class="registration-card" aria-labelledby="registration-title">
+      <a class="registration-brand" routerLink="/dashboard" aria-label="Tamilan Products home">
+        <span class="registration-brand-mark" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+        <span class="registration-brand-copy"><strong>TAMILAN</strong><small>PRODUCTS</small></span>
+      </a>
+
+      <span class="registration-eyebrow">JOIN OUR COMMUNITY</span>
+      <h2 id="registration-title">Create your account</h2>
+      <p class="registration-intro">Sign up to explore materials for your next creative project.</p>
+
+      <form (ngSubmit)="register()">
+        <label for="registration-name">Full name</label>
+        <input
+          id="registration-name"
+          type="text"
+          name="name"
+          [(ngModel)]="details.name"
+          autocomplete="name"
+          placeholder="Your full name"
+          required>
+
+        <div class="registration-field-row">
+          <div>
+            <label for="registration-email">Email address</label>
+            <input
+              id="registration-email"
+              type="email"
+              name="email"
+              [(ngModel)]="details.email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required>
+          </div>
+          <div>
+            <label for="registration-phone">Phone number</label>
+            <input
+              id="registration-phone"
+              type="tel"
+              name="phone"
+              [(ngModel)]="details.phone"
+              autocomplete="tel"
+              placeholder="+91"
+              required>
+          </div>
+        </div>
+
+        <div class="registration-field-row">
+          <div>
+            <label for="registration-password">Password</label>
+            <input
+              id="registration-password"
+              type="password"
+              name="password"
+              [(ngModel)]="details.password"
+              autocomplete="new-password"
+              placeholder="Create a password"
+              minlength="6"
+              required>
+          </div>
+          <div>
+            <label for="registration-confirm-password">Confirm password</label>
+            <input
+              id="registration-confirm-password"
+              type="password"
+              name="confirmPassword"
+              [(ngModel)]="details.confirmPassword"
+              autocomplete="new-password"
+              placeholder="Enter it again"
+              minlength="6"
+              required>
+          </div>
+        </div>
+
+        @if (errorMessage()) {
+          <p class="registration-error" role="alert">{{ errorMessage() }}</p>
+        }
+        @if (successMessage()) {
+          <p class="registration-success" role="status">{{ successMessage() }}</p>
+        }
+
+        <button class="registration-submit" type="submit">
+          Create account <i class="bi bi-arrow-right" aria-hidden="true"></i>
+        </button>
+      </form>
+
+      <p class="registration-signin">Already have an account? <a routerLink="/login">Sign in</a></p>
+      <p class="registration-disclaimer">Demo registration only. Connect a secure authentication service before production.</p>
+    </section>
+  </div>
+</main>

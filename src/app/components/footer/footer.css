@@ -1,0 +1,20 @@
+.c324700-SHARED-998412-brand{display:flex;align-items:center;gap:8px;width:max-content;color:var(--brand)}
+.c324700-SHARED-998412-brand-mark{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#f9e9b4,#d8a64b);color:#7d204f;font-size:26px}
+.c324700-SHARED-998412-brand-copy{display:flex;flex-direction:column;line-height:.9}
+.c324700-SHARED-998412-brand-copy strong{font-family:'Playfair Display',serif;letter-spacing:-1px;font-size:28px;color:#8f1654}
+.c324700-SHARED-998412-brand-copy small{font-size:12px;font-weight:800;letter-spacing:3px;color:#5b5147;margin-top:7px}
+.c324700-SHARED-998412-site-footer{background:#f7f3ee;padding:52px 0 20px;border-top:1px solid #e8e0d5}
+.c324700-SHARED-998412-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:38px}
+.c324700-SHARED-998412-footer-brand{margin-bottom:18px}
+.c324700-SHARED-998412-footer-about{color:#64605c;line-height:1.8;max-width:340px}
+.c324700-SHARED-998412-footer-col h4{font-size:15px;font-weight:800;margin-bottom:18px}
+.c324700-SHARED-998412-footer-col a{display:block;color:#5f5b58;margin-bottom:12px;font-size:13px}
+.c324700-SHARED-998412-footer-col a:hover{color:var(--accent)}
+.c324700-SHARED-998412-footer-contact{display:flex;gap:10px;align-items:flex-start;margin:12px 0;color:#5f5b58;font-size:13px;line-height:1.6}
+.c324700-SHARED-998412-footer-contact i{font-size:17px;color:var(--brand)}
+.c324700-SHARED-998412-footer-bottom{border-top:1px solid #ded7cf;margin-top:35px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;gap:15px;color:#666;font-size:12px}
+.c324700-SHARED-998412-payment-icons{display:flex;gap:8px;font-size:19px;color:#70334f}
+
+@media(max-width:991px){.c324700-SHARED-998412-footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:767px){.c324700-SHARED-998412-footer-grid{grid-template-columns:1fr 1fr;gap:28px 20px}.c324700-SHARED-998412-footer-grid>div:first-child{grid-column:1/-1}.c324700-SHARED-998412-footer-bottom{align-items:flex-start;flex-direction:column}}
+@media(max-width:380px){.c324700-SHARED-998412-footer-grid{grid-template-columns:1fr}.c324700-SHARED-998412-footer-grid>div:first-child{grid-column:auto}}

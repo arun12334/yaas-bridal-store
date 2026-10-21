@@ -1,0 +1,27 @@
+<main class="container-xl py-5">
+  <section aria-labelledby="brooch-material-title">
+    <div class="brooch-material-heading">
+      <div>
+        <p class="brooch-material-eyebrow">Explore our collections</p>
+        <h1 id="brooch-material-title">Brooch Material</h1>
+      </div>
+      <a class="brooch-material-view-all" routerLink="/collections">
+        View all <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="brooch-material-grid">
+      @for (category of categories; track category.name) {
+        <a class="brooch-material-card" [routerLink]="['/collection']" [queryParams]="{ q: category.searchTerm }">
+          <div class="brooch-material-card-image">
+            <img [ngSrc]="category.image" [alt]="category.name" width="720" height="540" loading="lazy">
+            <span class="brooch-material-card-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          </div>
+          <div class="brooch-material-card-info">
+            <h2>{{ category.name }}</h2>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+</main>

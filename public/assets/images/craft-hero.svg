@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#f1e9d9"/><stop offset="1" stop-color="#c9b99e"/></linearGradient>
+    <linearGradient id="scissor" x2="1" y2="1"><stop stop-color="#e6e3dc"/><stop offset=".5" stop-color="#777879"/><stop offset="1" stop-color="#dedbd4"/></linearGradient>
+    <linearGradient id="thread" x2="1" y2="0"><stop stop-color="#9c5d19"/><stop offset=".48" stop-color="#f3c766"/><stop offset="1" stop-color="#8e5416"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="1.5"/></filter>
+  </defs>
+  <rect width="1600" height="620" fill="url(#bg)"/>
+  <g opacity=".4" fill="none" stroke="#8b7a5e" stroke-width="8">
+    <path d="M0 72q170 90 325 0t320 0 320 0 320 0 315 0M0 555q180-105 350 0t340 0 335 0 335 0"/>
+    <path d="M100 0q80 150 0 300T100 620M1500 0q-80 160 0 320t0 300"/>
+  </g>
+  <g opacity=".3" fill="#7d8c57"><path d="M256 0q-76 95-5 156 94-71 5-156Zm72 122q-95 23-83 116 110-4 83-116Zm101 329q-71-81-151-27 48 97 151 27Z"/><path d="M1244 76q-40 88 35 143 70-87-35-143Zm-80 117q88-14 101 73-98 29-101-73Zm237 242q-99-15-123 75 105 36 123-75Z"/></g>
+  <g fill="none" stroke="url(#thread)" stroke-width="18" stroke-linecap="round" opacity=".94">
+    <path d="M1040 72c175 96 250 61 316 178s133 155 244 166"/>
+    <path d="M1054 95c171 98 240 62 303 178s129 152 239 161" stroke-width="7"/>
+    <path d="M81 470c119-67 234-42 320 24s177 78 263 18" stroke-width="13"/>
+  </g>
+  <g transform="translate(334 198) rotate(-19)" fill="none" stroke="url(#scissor)" stroke-width="22" stroke-linecap="round">
+    <circle cx="48" cy="205" r="91"/><circle cx="226" cy="205" r="91"/>
+    <path d="M105 148 380 7q42-22 55 5t-21 48L132 221M169 147 8 18Q-30-13-46 12t14 50L153 221"/>
+  </g>
+  <g transform="translate(739 128)" stroke="#765527" stroke-width="11" opacity=".7">
+    <path d="M0 0v350M42 0v350M84 0v350M126 0v350M168 0v350M210 0v350"/>
+    <path d="M-8 0h226M-8 350h226"/>
+  </g>
+  <g transform="translate(1185 400) rotate(-23)"><rect width="270" height="52" rx="24" fill="#8d561d"/><path d="M20 10h227M20 22h227M20 34h227M20 46h227" stroke="#f1c66e" stroke-width="7"/></g>
+  <rect width="1600" height="620" fill="#131426" opacity=".28" filter="url(#soft)"/>
+</svg>

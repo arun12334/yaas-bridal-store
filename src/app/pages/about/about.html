@@ -1,0 +1,106 @@
+<main class="about-page">
+  <section class="about-hero" aria-labelledby="about-title">
+    <div class="container-xl about-hero-inner">
+      <div class="about-hero-copy">
+        <nav class="about-breadcrumbs" aria-label="Breadcrumb">
+          <a routerLink="/dashboard">Home</a>
+          <i class="bi bi-chevron-right" aria-hidden="true"></i>
+          <span aria-current="page">About us</span>
+        </nav>
+        <span class="about-eyebrow"><i class="bi bi-flower1" aria-hidden="true"></i> TAMILAN PRODUCTS</span>
+        <h1 id="about-title">About <span>Aari Materials</span></h1>
+        <p class="about-subtitle">Your Destination for Beautiful Aari Embroidery Materials.</p>
+        <p class="about-intro">Explore Aari embroidery essentials, decorative details and creative supplies for the projects you love to make.</p>
+        <a class="about-button" routerLink="/aari-material">Shop Now <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="about-hero-art">
+        <img
+          ngSrc="/assets/about/banner-3.png"
+          alt="Aari embroidery kit with threads, needles, beads and fabric"
+          width="1983"
+          height="793"
+          priority
+        >
+        <div class="about-art-note"><i class="bi bi-heart" aria-hidden="true"></i><span>Make something beautiful</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-story container-xl" aria-labelledby="about-story-title">
+    <div class="about-story-mark" aria-hidden="true"><i class="bi bi-stars"></i></div>
+    <div class="about-story-copy">
+      <span class="about-eyebrow">OUR STORY</span>
+      <h2 id="about-story-title">Made for the joy of making.</h2>
+      <p>Tamilan Products brings together materials for Aari embroidery, jewellery making, tailoring and other creative work. Our purpose is to help makers find useful supplies for their next idea in one convenient online destination.</p>
+      <p>We believe the right thread, bead or tool can help you take an idea from the first stitch to a finished creation. We’re here to make exploring those details a little easier.</p>
+    </div>
+  </section>
+
+  <section class="about-offer" aria-labelledby="about-offer-title">
+    <div class="container-xl">
+      <div class="about-section-heading">
+        <span class="about-eyebrow">WHAT WE OFFER</span>
+        <h2 id="about-offer-title">Materials for every detail.</h2>
+        <p>Browse supplies for embroidery, embellishment, tailoring and more.</p>
+      </div>
+      <div class="about-offer-grid">
+        @for (banner of banners; track banner.image) {
+          <article class="about-offer-card">
+            <img [ngSrc]="banner.image" [alt]="banner.alt" width="1983" height="793">
+            <div class="about-offer-copy">
+              <h3>{{ banner.title }}</h3>
+              <p>{{ banner.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="about-why container-xl" aria-labelledby="about-why-title">
+    <div class="about-section-heading">
+      <span class="about-eyebrow">WHY SHOP WITH US</span>
+      <h2 id="about-why-title">A little more ease for your next project.</h2>
+    </div>
+    <div class="about-reasons-grid">
+      @for (reason of reasons; track reason.title) {
+        <article class="about-reason">
+          <span class="about-value-icon"><i [class]="reason.icon" aria-hidden="true"></i></span>
+          <h3>{{ reason.title }}</h3>
+          <p>{{ reason.description }}</p>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="about-purpose" aria-labelledby="about-purpose-title">
+    <div class="container-xl about-purpose-inner">
+      <div>
+        <span class="about-eyebrow">OUR MISSION</span>
+        <h2 id="about-purpose-title">Helping makers find what they need.</h2>
+        <p>To help embroidery artists, boutiques, tailoring professionals and craft enthusiasts find materials for the work they love.</p>
+      </div>
+      <div class="about-purpose-divider" aria-hidden="true"></div>
+      <div>
+        <span class="about-eyebrow">OUR VISION</span>
+        <h2>A trusted destination for creativity.</h2>
+        <p>To build a trusted destination for Aari embroidery and creative textile materials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-contact container-xl" aria-labelledby="about-contact-title">
+    <div class="about-contact-copy">
+      <span class="about-eyebrow">HERE TO HELP</span>
+      <h2 id="about-contact-title">Need a hand choosing materials?</h2>
+      <p>Contact Tamilan Products for product enquiries and shopping assistance.</p>
+      <a class="about-button" routerLink="/contact">Contact us <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <address class="about-contact-card">
+      <h3>Tamilan Products</h3>
+      <p><i class="bi bi-geo-alt" aria-hidden="true"></i><span>Kamaraj Rd, Puspa Nagar, Tiruppur, Tamil Nadu 641604</span></p>
+      <a href="tel:+919688526199"><i class="bi bi-telephone" aria-hidden="true"></i><span>+91 96885 26199</span></a>
+      <a href="mailto:info@tamilanproducts.in"><i class="bi bi-envelope" aria-hidden="true"></i><span>info@tamilanproducts.in</span></a>
+    </address>
+  </section>
+</main>

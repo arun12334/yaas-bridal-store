@@ -1,0 +1,71 @@
+<main class="login-page">
+  <div class="login-shell">
+    <section class="login-showcase" aria-label="Tamilan Products craft supplies">
+      <div class="showcase-glow showcase-glow-top" aria-hidden="true"></div>
+      <div class="showcase-glow showcase-glow-bottom" aria-hidden="true"></div>
+      <div class="showcase-content">
+        <span class="showcase-icon" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+        <span class="showcase-eyebrow">MADE FOR MAKERS</span>
+        <h2>Bring every<br>beautiful idea<br><span>to life.</span></h2>
+        <p>Find the colours, textures and little details that make your next creation uniquely yours.</p>
+        <div class="showcase-benefits">
+          <span><i class="bi bi-stars" aria-hidden="true"></i> Thoughtful craft essentials</span>
+          <span><i class="bi bi-heart" aria-hidden="true"></i> Inspiration in every detail</span>
+        </div>
+      </div>
+      <div class="showcase-art" aria-hidden="true">
+        <img src="/assets/images/craft-hero.svg" alt="">
+      </div>
+      <span class="showcase-decoration showcase-decoration-one" aria-hidden="true">✿</span>
+      <span class="showcase-decoration showcase-decoration-two" aria-hidden="true">✧</span>
+    </section>
+
+    <section class="login-card" aria-labelledby="login-title">
+    <a class="login-brand" routerLink="/dashboard" aria-label="Tamilan Products home">
+      <span class="login-brand-mark" aria-hidden="true"><i class="bi bi-flower1"></i></span>
+      <span class="login-brand-copy"><strong>TAMILAN</strong><small>PRODUCTS</small></span>
+    </a>
+
+    <span class="login-eyebrow">WELCOME BACK</span>
+    <h1 id="login-title">Sign in to your account</h1>
+    <p class="login-intro">Log in to continue exploring materials for your next creative project.</p>
+
+    <form (ngSubmit)="login()">
+      <label for="login-email">Email address</label>
+      <input
+        id="login-email"
+        type="email"
+        name="email"
+        [(ngModel)]="credentials.email"
+        autocomplete="username"
+        placeholder="you@example.com"
+        required>
+
+      <label for="login-password">Password</label>
+      <input
+        id="login-password"
+        type="password"
+        name="password"
+        [(ngModel)]="credentials.password"
+        autocomplete="current-password"
+        placeholder="Enter your password"
+        required>
+
+      @if (errorMessage()) {
+        <p class="login-error" role="alert">{{ errorMessage() }}</p>
+      }
+
+      <button class="login-submit" type="submit">Sign in <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+    </form>
+
+    <aside class="login-demo-credentials" aria-label="Demo login credentials">
+      <strong>Demo login</strong>
+      <span>Email: <b>{{ demoEmail }}</b></span>
+      <span>Password: <b>{{ demoPassword }}</b></span>
+    </aside>
+
+    <a class="login-home-link" routerLink="/registration">Create an account -></a>
+    <p class="login-disclaimer">Demo sign-in only. Connect a secure authentication service before production.</p>
+    </section>
+  </div>
+</main>

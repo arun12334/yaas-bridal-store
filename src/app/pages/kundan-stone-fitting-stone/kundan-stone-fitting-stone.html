@@ -1,0 +1,27 @@
+<main class="container-xl py-5">
+  <section aria-labelledby="kundan-stone-title">
+    <div class="kundan-stone-heading">
+      <div>
+        <p class="kundan-stone-eyebrow">Explore our collections</p>
+        <h1 id="kundan-stone-title">Kundan Stone / Fitting Stone</h1>
+      </div>
+      <a class="kundan-stone-view-all" routerLink="/collections">
+        View all <i class="bi bi-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="kundan-stone-grid">
+      @for (category of categories; track category.name) {
+        <a class="kundan-stone-card" [routerLink]="['/collection']" [queryParams]="{ q: category.searchTerm }">
+          <div class="kundan-stone-card-image">
+            <img [ngSrc]="image" [alt]="category.name" width="720" height="540" loading="lazy">
+            <span class="kundan-stone-card-arrow" aria-hidden="true"><i class="bi bi-arrow-up-right"></i></span>
+          </div>
+          <div class="kundan-stone-card-info">
+            <h2>{{ category.name }}</h2>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+</main>

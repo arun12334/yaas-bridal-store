@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 540">
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#fbfaf7"/><stop offset="1" stop-color="#ece9e2"/></linearGradient>
+    <radialGradient id="bead" cx="32%" cy="25%"><stop stop-color="#fff8dc"/><stop offset=".35" stop-color="#edc66a"/><stop offset="1" stop-color="#986125"/></radialGradient>
+    <radialGradient id="pearl" cx="30%" cy="25%"><stop stop-color="#fff"/><stop offset=".55" stop-color="#e9e4d9"/><stop offset="1" stop-color="#aaa59b"/></radialGradient>
+    <filter id="s" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#5e4d2d" flood-opacity=".3"/></filter>
+  </defs>
+  <rect width="720" height="540" fill="url(#bg)"/>
+  <g filter="url(#s)">
+    <g fill="url(#bead)" stroke="#fff2c5" stroke-width="2">
+      <circle cx="134" cy="151" r="25"/><circle cx="206" cy="113" r="18"/><circle cx="274" cy="151" r="26"/><circle cx="351" cy="109" r="21"/><circle cx="431" cy="151" r="27"/><circle cx="511" cy="111" r="18"/><circle cx="584" cy="162" r="26"/>
+      <circle cx="178" cy="240" r="27"/><circle cx="254" cy="222" r="18"/><circle cx="331" cy="250" r="25"/><circle cx="408" cy="218" r="18"/><circle cx="492" cy="253" r="28"/><circle cx="561" cy="224" r="19"/>
+      <circle cx="119" cy="341" r="19"/><circle cx="221" cy="334" r="26"/><circle cx="304" cy="365" r="18"/><circle cx="383" cy="335" r="27"/><circle cx="465" cy="365" r="20"/><circle cx="571" cy="340" r="26"/>
+      <circle cx="168" cy="433" r="23"/><circle cx="269" cy="445" r="17"/><circle cx="354" cy="425" r="24"/><circle cx="454" cy="448" r="18"/><circle cx="540" cy="426" r="22"/>
+    </g>
+    <g fill="url(#pearl)" stroke="#fff" stroke-width="2"><circle cx="323" cy="158" r="10"/><circle cx="527" cy="307" r="11"/><circle cx="255" cy="286" r="10"/><circle cx="412" cy="397" r="11"/><circle cx="621" cy="283" r="10"/></g>
+  </g>
+</svg>

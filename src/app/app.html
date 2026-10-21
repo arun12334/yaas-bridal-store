@@ -1,0 +1,45 @@
+@if (!hideSiteChrome()) {
+  <app-header />
+}
+
+<router-outlet />
+
+@if (!hideSiteChrome()) {
+  <app-footer />
+  <app-chat-widget />
+<div class="c324700-SHARED-998412-cart-backdrop" [class.c324700-SHARED-998412-show]="store.cartDrawerOpen()" [attr.aria-hidden]="!store.cartDrawerOpen()" (click)="store.closeCart()"></div>
+<aside class="c324700-SHARED-998412-cart-drawer" [class.c324700-SHARED-998412-open]="store.cartDrawerOpen()" [attr.aria-hidden]="!store.cartDrawerOpen()" aria-label="Shopping cart" role="dialog" [attr.aria-modal]="store.cartDrawerOpen()">
+  <div class="c324700-SHARED-998412-drawer-header">
+    <div><h3>Shopping Cart <span>({{ store.cartCount() }})</span></h3><small>Your craft essentials are waiting</small></div>
+    <button type="button" (click)="store.closeCart()" aria-label="Close cart"><i class="bi bi-x-lg"></i></button>
+  </div>
+  <div class="c324700-SHARED-998412-shipping-progress">
+    <div class="progress-track"><span [style.width.%]="shippingProgress"></span></div>
+    <p>@if (store.cartTotal() >= freeShippingThreshold) { <b>You unlocked free shipping!</b> } @else { Spend {{ remainingShipping | currency:'INR':'symbol':'1.2-2' }} more to enjoy <b>Free shipping!</b> }</p>
+  </div>
+  <div class="c324700-SHARED-998412-cart-timer"><i class="bi bi-fire"></i> Your cart is reserved for <strong>05:00</strong></div>
+  <div class="c324700-SHARED-998412-drawer-items">
+    @if (store.cart().length) {
+      @for (line of store.cart(); track line.product.id) {
+        <div class="c324700-SHARED-998412-drawer-item">
+          <img [src]="line.product.image" [alt]="line.product.name">
+          <div><h4>{{ line.product.name }}</h4><div class="c324700-SHARED-998412-drawer-price">{{ line.product.price | currency:'INR':'symbol':'1.2-2' }}</div>
+            <div class="c324700-SHARED-998412-qty-control"><button type="button" (click)="store.changeQuantity(line.product.id, -1)" aria-label="Decrease quantity">−</button><span>{{ line.quantity }}</span><button type="button" (click)="store.changeQuantity(line.product.id, 1)" aria-label="Increase quantity">+</button></div>
+          </div>
+          <button class="c324700-SHARED-998412-remove-item" type="button" (click)="store.removeFromCart(line.product.id)" aria-label="Remove item"><i class="bi bi-trash3"></i></button>
+        </div>
+      }
+    } @else {
+      <div class="c324700-SHARED-998412-drawer-empty"><i class="bi bi-bag"></i><h4>Your cart is empty</h4><p>Discover something beautiful for your next project.</p><a class="btn c324700-SHARED-998412-btn-brand mt-2" routerLink="/collections" (click)="store.closeCart()">Start shopping</a></div>
+    }
+  </div>
+  <div class="c324700-SHARED-998412-drawer-footer">
+    <div class="c324700-SHARED-998412-subtotal-row"><span>Subtotal</span><strong>{{ store.cartTotal() | currency:'INR':'symbol':'1.2-2' }}</strong></div>
+    <p>Taxes and shipping calculated at checkout.</p>
+    <a routerLink="/cart" class="btn c324700-SHARED-998412-btn-outline-brand w-100 mb-2" (click)="store.closeCart()">View Cart</a>
+    <a routerLink="/checkout" class="btn c324700-SHARED-998412-btn-brand w-100" (click)="store.closeCart()">Continue to Checkout <i class="bi bi-arrow-right ms-2"></i></a>
+    <small class="text-center d-block mt-3"><i class="bi bi-lock"></i> Secure checkout · COD not available</small>
+  </div>
+</aside>
+<button class="c324700-SHARED-998412-back-to-top" type="button" [class.c324700-SHARED-998412-visible]="showBackToTop()" (click)="scrollToTop()" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+}

@@ -1,0 +1,24 @@
+<main>
+  <section class="c273946-WISH-805317-LIST-page-hero c273946-WISH-805317-LIST-compact-hero">
+    <div class="container-xl"><div class="c273946-WISH-805317-LIST-breadcrumbs"><a routerLink="/dashboard">Home</a> <i class="bi bi-chevron-right"></i> Wishlist</div><h1>Your Wishlist</h1><p>Keep your favourite craft essentials close.</p></div>
+  </section>
+  <section class="container-xl c273946-WISH-805317-LIST-page-section">
+    @if (store.wishlist().length) {
+      <div class="c273946-WISH-805317-LIST-product-grid">
+        @for (product of store.wishlist(); track product.id) {
+          <article class="c273946-WISH-805317-LIST-product-card">
+            <div class="c273946-WISH-805317-LIST-product-image"><a [routerLink]="['/product']" [queryParams]="{ id: product.id }"><img [src]="product.image" [alt]="product.name" loading="lazy"></a>
+              <button class="c273946-WISH-805317-LIST-product-wish c273946-WISH-805317-LIST-saved" type="button" (click)="store.toggleWishlist(product)" aria-label="Remove from wishlist"><i class="bi bi-heart-fill"></i></button>
+            </div>
+            <div class="c273946-WISH-805317-LIST-product-info"><h3 class="c273946-WISH-805317-LIST-product-title"><a [routerLink]="['/product']" [queryParams]="{ id: product.id }">{{ product.name }}</a></h3>
+              <div class="c273946-WISH-805317-LIST-product-price">{{ product.price | currency:'INR':'symbol':'1.2-2' }}</div>
+              <div class="c273946-WISH-805317-LIST-product-actions"><button class="c273946-WISH-805317-LIST-btn-add" type="button" (click)="store.addToCart(product)"><i class="bi bi-bag-plus me-1"></i>Add to Cart</button><button class="btn c273946-WISH-805317-LIST-btn-outline-brand" type="button" (click)="store.toggleWishlist(product)">Remove</button></div>
+            </div>
+          </article>
+        }
+      </div>
+    } @else {
+      <div class="c273946-WISH-805317-LIST-empty-page"><i class="bi bi-heart"></i><h3>Your wishlist is waiting</h3><p>Save products you love and find them here later.</p><a class="btn c273946-WISH-805317-LIST-btn-brand" routerLink="/collections">Explore collections</a></div>
+    }
+  </section>
+</main>

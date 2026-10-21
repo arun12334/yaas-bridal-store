@@ -1,0 +1,60 @@
+<div class="c324700-SHARED-998412-promo-bar">
+  <div class="container-xl c324700-SHARED-998412-promo-content">
+    <div class="c324700-SHARED-998412-promo-rotator" aria-live="polite" aria-atomic="true">
+      @for (message of promoMessages; track message.text; let index = $index) {
+        @if (activePromoMessage() === index) {
+          <span class="c324700-SHARED-998412-promo-message"><i [class]="message.icon" aria-hidden="true"></i> {{ message.text }}</span>
+        }
+      }
+    </div>
+    <label class="c324700-SHARED-998412-currency-selector">
+      <span class="c324700-SHARED-998412-currency-label">{{ selectedCountry().code }} ({{ selectedCountry().country }}) <i class="bi bi-chevron-down" aria-hidden="true"></i></span>
+      <select [value]="selectedCountry().country" (change)="selectCountry($event)" aria-label="Choose country and currency">
+        @for (country of countryOptions; track country.country) {
+          <option [value]="country.country">{{ country.code }} ({{ country.country }})</option>
+        }
+      </select>
+    </label>
+  </div>
+</div>
+
+<header class="c324700-SHARED-998412-site-header">
+  <div class="container-xl">
+    <div class="c324700-SHARED-998412-header-main">
+      <a class="c324700-SHARED-998412-brand" routerLink="/dashboard" aria-label="Tamilan Products home">
+        <span class="c324700-SHARED-998412-brand-mark"><i class="bi bi-flower1"></i></span>
+        <span class="c324700-SHARED-998412-brand-copy"><strong>TAMILAN</strong><small>PRODUCTS</small></span>
+      </a>
+      <form class="c324700-SHARED-998412-search-form" (ngSubmit)="search()">
+        <input type="search" name="search" [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)" placeholder="I'm looking for..." aria-label="Search products">
+        <button type="submit"><i class="bi bi-search"></i><span>Search</span></button>
+      </form>
+      <div class="c324700-SHARED-998412-header-tools">
+        <a class="c324700-SHARED-998412-help-link" routerLink="/contact"><i class="bi bi-telephone"></i><span><b>+91 96885 26199</b><small>Need Any Help?</small></span></a>
+        <a class="c324700-SHARED-998412-icon-tool" routerLink="/wishlist" aria-label="Wishlist"><i class="bi bi-heart"></i><em>{{ store.wishlistCount() }}</em></a>
+        <button class="c324700-SHARED-998412-cart-shortcut" type="button" (click)="store.openCart()" [attr.aria-expanded]="store.cartDrawerOpen()"><span class="c324700-SHARED-998412-cart-icon"><i class="bi bi-cart3"></i><em>{{ store.cartCount() }}</em></span><span>Cart<strong>{{ store.cartTotal() | currency:'INR':'symbol':'1.2-2' }}</strong></span></button>
+        <button class="c324700-SHARED-998412-mobile-menu-btn" type="button" (click)="mobileMenuOpen.update(open => !open)" [attr.aria-expanded]="mobileMenuOpen()" aria-controls="main-navigation" [attr.aria-label]="mobileMenuOpen() ? 'Close navigation' : 'Open navigation'"><i [class]="mobileMenuOpen() ? 'bi bi-x-lg' : 'bi bi-list'"></i></button>
+      </div>
+    </div>
+    <nav id="main-navigation" class="c324700-SHARED-998412-main-nav" [class.c324700-SHARED-998412-mobile-open]="mobileMenuOpen()" aria-label="Main navigation">
+      <a class="c324700-SHARED-998412-mobile-nav-link" routerLink="/dashboard" routerLinkActive="c324700-SHARED-998412-active" ariaCurrentWhenActive="page" (click)="closeMobileMenu()">Dashboard</a>
+      <a class="c324700-SHARED-998412-desktop-nav-link" routerLink="/dashboard" routerLinkActive="c324700-SHARED-998412-active" ariaCurrentWhenActive="page">Dashboard</a>
+      @for (item of primaryMenuItems; track item.route) {
+        <a class="c324700-SHARED-998412-desktop-nav-link" [routerLink]="item.route" routerLinkActive="c324700-SHARED-998412-active" ariaCurrentWhenActive="page">{{ item.name }}</a>
+      }
+      <div class="c324700-SHARED-998412-nav-more" [class.c324700-SHARED-998412-nav-more-open]="moreMenuOpen()" (mouseenter)="openMoreMenu()" (mouseleave)="closeMoreMenu()" (keydown.escape)="closeMoreMenu()">
+        <button class="c324700-SHARED-998412-nav-more-button" type="button" (click)="openMoreMenu()" [attr.aria-expanded]="moreMenuOpen()" aria-controls="more-navigation">
+          More <i class="bi bi-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div id="more-navigation" class="c324700-SHARED-998412-more-menu">
+          @for (item of moreMenuItems; track item.route) {
+            <a [routerLink]="item.route" routerLinkActive="c324700-SHARED-998412-active" ariaCurrentWhenActive="page" (click)="closeMoreMenu()">{{ item.name }}</a>
+          }
+        </div>
+      </div>
+      @for (item of menuItems; track item.route) {
+        <a class="c324700-SHARED-998412-mobile-nav-link" [routerLink]="item.route" routerLinkActive="c324700-SHARED-998412-active" ariaCurrentWhenActive="page" (click)="closeMobileMenu()">{{ item.name }}</a>
+      }
+    </nav>
+  </div>
+</header>

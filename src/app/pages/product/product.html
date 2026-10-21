@@ -1,0 +1,43 @@
+<main>
+  <div class="container-xl c926451-PROD-319708-VIEW-page-section">
+    <div class="c926451-PROD-319708-VIEW-breadcrumbs mb-4"><a routerLink="/dashboard">Home</a> <i class="bi bi-chevron-right"></i> <a routerLink="/collections">Collections</a> <i class="bi bi-chevron-right"></i> {{ product().name }}</div>
+    <div class="c926451-PROD-319708-VIEW-product-detail-layout">
+      <div class="c926451-PROD-319708-VIEW-product-detail-image">
+        <img [src]="product().image" [alt]="product().name">
+        @if (product().oldPrice > product().price) { <span class="c926451-PROD-319708-VIEW-discount-tag">-{{ ((product().oldPrice - product().price) / product().oldPrice * 100) | number:'1.0-0' }}%</span> }
+      </div>
+      <div class="c926451-PROD-319708-VIEW-product-detail-copy">
+        <span class="c926451-PROD-319708-VIEW-eyebrow">TAMILAN PRODUCTS · CRAFT ESSENTIALS</span>
+        <h1>{{ product().name }}</h1>
+        <div class="c926451-PROD-319708-VIEW-rating-line"><span>★★★★★</span> <small>Quality craft material</small></div>
+        <div class="c926451-PROD-319708-VIEW-detail-price">{{ product().price | currency:'INR':'symbol':'1.2-2' }} @if (product().oldPrice > product().price) { <del>{{ product().oldPrice | currency:'INR':'symbol':'1.2-2' }}</del> }</div>
+        <p class="c926451-PROD-319708-VIEW-detail-description">A carefully selected material for Aari work, embroidery, jewellery-making and creative projects. Please review the product details before placing your order.</p>
+        <div class="c926451-PROD-319708-VIEW-detail-meta">
+          <div><span>Category</span><b>{{ product().category }}</b></div><div><span>Type</span><b>{{ product().sub }}</b></div>
+          <div><span>Colour</span><b>{{ product().color }}</b></div><div><span>Size / Pack</span><b>{{ product().size }}</b></div>
+        </div>
+        <div class="c926451-PROD-319708-VIEW-detail-qty"><span>Quantity</span><div class="c926451-PROD-319708-VIEW-qty-control"><button type="button" (click)="decreaseQuantity()" aria-label="Decrease quantity">−</button><span>{{ quantity() }}</span><button type="button" (click)="quantity.update(value => value + 1)" aria-label="Increase quantity">+</button></div></div>
+        <div class="c926451-PROD-319708-VIEW-detail-buttons">
+          <button class="btn c926451-PROD-319708-VIEW-btn-brand" type="button" (click)="addToCart()"><i class="bi bi-bag-plus me-2"></i>Add to Cart</button>
+          <button class="btn c926451-PROD-319708-VIEW-btn-outline-brand" type="button" (click)="buyNow()">Buy Now <i class="bi bi-arrow-right ms-2"></i></button>
+          <button class="c926451-PROD-319708-VIEW-detail-wish" type="button" (click)="toggleWishlist()" [attr.aria-label]="store.isWishlisted(product().id) ? 'Remove from wishlist' : 'Add to wishlist'"><i class="bi" [class.bi-heart-fill]="store.isWishlisted(product().id)" [class.bi-heart]="!store.isWishlisted(product().id)"></i></button>
+        </div>
+        <div class="c926451-PROD-319708-VIEW-delivery-note"><i class="bi bi-truck"></i><span><b>Delivery across India</b><small>Shipping options are shown at checkout.</small></span></div>
+        <div class="c926451-PROD-319708-VIEW-delivery-note"><i class="bi bi-shield-check"></i><span><b>Secure online payment</b><small>Cash on delivery is not available.</small></span></div>
+      </div>
+    </div>
+    <section class="c926451-PROD-319708-VIEW-related-section">
+      <div class="c926451-PROD-319708-VIEW-section-heading"><span class="c926451-PROD-319708-VIEW-eyebrow">MORE TO LOVE</span><h2>You may also like</h2></div>
+      <div class="c926451-PROD-319708-VIEW-product-grid">
+        @for (item of relatedProducts(); track item.id) {
+          <article class="c926451-PROD-319708-VIEW-product-card">
+            <a class="c926451-PROD-319708-VIEW-product-image" [routerLink]="['/product']" [queryParams]="{ id: item.id }"><img [src]="item.image" [alt]="item.name" loading="lazy"></a>
+            <div class="c926451-PROD-319708-VIEW-product-info"><h3 class="c926451-PROD-319708-VIEW-product-title"><a [routerLink]="['/product']" [queryParams]="{ id: item.id }">{{ item.name }}</a></h3>
+              <div class="c926451-PROD-319708-VIEW-product-price">{{ item.price | currency:'INR':'symbol':'1.2-2' }}</div><button class="c926451-PROD-319708-VIEW-btn-add" type="button" (click)="store.addToCart(item)">Add to Cart</button>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+  </div>
+</main>
